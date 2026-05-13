@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Member login — Lead Broker Blueprint</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="../index.html" class="brand">
+        <span class="brand-mark">LB</span>
+        Lead Broker Blueprint
+      </a>
+      <div class="nav-links">
+        <a href="../index.html">← Back to homepage</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="content-page container text-center" style="padding-top:60px;">
+    <h1>Member login</h1>
+    <p class="lede" style="margin: 0 auto;">
+      Enter the email address you used at purchase. We'll email you a one-time login link.
+      No passwords; we don't store any. The link is good for 15 minutes and one use only.
+    </p>
+
+    <form id="login-form" class="waitlist-form" style="background:none; padding:30px 0 0; max-width: 480px;" action="/api/auth/request-magic-link" method="POST">
+      <input type="email" name="email" required autocomplete="email" placeholder="your@email.com" aria-label="Email address" style="background: #F7F9FC; color: var(--ink); border: 1px solid var(--line);" />
+      <button type="submit" style="background: var(--accent); color:#fff;">Email me a login link</button>
+    </form>
+
+    <div class="callout" style="margin-top: 50px; max-width: 540px; margin-left:auto; margin-right:auto; text-align:left;">
+      <strong>Members area activates at launch.</strong>
+      <p style="margin: 8px 0 0;">The course is in pre-launch / waitlist mode right now. Member login becomes active when buyers can purchase the course. If you've already paid (e.g., as a founding member during early invitations), email <a class="inline" href="mailto:leadbrokerblueprint@gmail.com">leadbrokerblueprint@gmail.com</a> for manual access.</p>
+    </div>
+
+    <p style="margin-top: 40px; color: var(--muted); font-size:14px;">
+      Not a member yet? <a class="inline" href="../index.html#waitlist">Join the waitlist</a> for the launch announcement.
+    </p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="foot-bottom">
+        <span>© <span data-year>2026</span> Lead Broker Blueprint by Luciano Moretti.</span>
+        <span><a href="../index.html">Home</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="../refund.html">Refund</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('login-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const emailInput = this.querySelector('input[type="email"]');
+      const button = this.querySelector('button');
+      const email = (emailInput.value || '').trim();
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return alert('Please enter a valid email.');
+
+      const originalLabel = button.textContent;
+      button.disabled = true; button.textContent = 'Sending…';
+      try {
+        // v1: backend stub — endpoint to be activated at launch
+        const r = await fetch('/api/auth/request-magic-link', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email }),
+        });
+        if (r.status === 503) {
+          alert('Member login activates at launch. If you\'re an early purchaser, email leadbrokerblueprint@gmail.com.');
+        } else if (r.ok) {
+          alert('Check your inbox — login link sent.');
+          emailInput.value = '';
+        } else {
+          alert('Hmm — something went wrong. Email leadbrokerblueprint@gmail.com and we\'ll help.');
+        }
+      } catch (err) {
+        alert('Member login activates at launch. Email leadbrokerblueprint@gmail.com for help.');
+      } finally {
+        button.disabled = false; button.textContent = originalLabel;
+      }
+    });
+  </script>
+  <script src="../assets/main.js"></script>
+</body>
+</html>

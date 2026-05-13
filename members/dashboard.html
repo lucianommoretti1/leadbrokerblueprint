@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Course dashboard — Lead Broker Blueprint</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="../index.html" class="brand">
+        <span class="brand-mark">LB</span>
+        Lead Broker Blueprint
+      </a>
+      <div class="nav-links">
+        <a href="#" id="member-email" style="color: var(--muted);">member@email.com</a>
+        <a href="#" id="logout-link">Sign out</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="padding: 60px 0 100px;">
+    <span class="eyebrow">Welcome back</span>
+    <h1 style="font-size: clamp(1.8rem, 4vw, 2.6rem); margin-bottom: 12px;">Your course library</h1>
+    <p class="lede">Eight modules. Sixty-five lessons. Twenty deliverables. Pick up wherever you left off.</p>
+
+    <div class="modules">
+      <a class="module-card" href="module-1.html">
+        <div class="module-num">1</div>
+        <div>
+          <h3>What Lead Brokering Actually Is</h3>
+          <p>Vocabulary, the four-player ecosystem, business models, brief history, the CAC/LTV math.</p>
+        </div>
+        <div class="module-meta">5 lessons · 3 deliverables</div>
+      </a>
+      <a class="module-card" href="module-2.html">
+        <div class="module-num">2</div>
+        <div>
+          <h3>The Vertical Landscape</h3>
+          <p>Six-factor framework, seven vertical landscapes, decision exercise.</p>
+        </div>
+        <div class="module-meta">9 lessons · 3 deliverables</div>
+      </a>
+      <a class="module-card" href="module-3.html">
+        <div class="module-num">3</div>
+        <div>
+          <h3>The Regulatory Landscape</h3>
+          <p>TCPA, FCC rules, FTC, TSR, CAN-SPAM, FCRA, state privacy, vertical-specific. The differentiator.</p>
+        </div>
+        <div class="module-meta">13 lessons · 3 deliverables</div>
+      </a>
+      <a class="module-card" href="module-4.html">
+        <div class="module-num">4</div>
+        <div>
+          <h3>The Buyer Side</h3>
+          <p>Buyer profiles, LPA structure, pricing models, delivery, disputes, conversation scripts.</p>
+        </div>
+        <div class="module-meta">7 lessons · 3 deliverables</div>
+      </a>
+      <a class="module-card" href="module-5.html">
+        <div class="module-num">5</div>
+        <div>
+          <h3>The Lead Generation Side</h3>
+          <p>Traffic sources, paid search/social, SEO, landing pages, intake, unit economics.</p>
+        </div>
+        <div class="module-meta">7 lessons · 3 deliverables</div>
+      </a>
+      <a class="module-card" href="module-6.html">
+        <div class="module-num">6</div>
+        <div>
+          <h3>Operations and Tooling</h3>
+          <p>Tech stack, lead distribution platforms, call tracking, consent capture, team structure.</p>
+        </div>
+        <div class="module-meta">6 lessons · 2 deliverables</div>
+      </a>
+      <a class="module-card" href="module-7.html">
+        <div class="module-num">7</div>
+        <div>
+          <h3>Starting from Zero</h3>
+          <p>Readiness assessment, capital scenarios, 90-day framework, validation, failure modes.</p>
+        </div>
+        <div class="module-meta">7 lessons · 3 deliverables</div>
+      </a>
+      <a class="module-card" href="module-8.html">
+        <div class="module-num">8</div>
+        <div>
+          <h3>Continued Learning</h3>
+          <p>Where to go next. Conferences, publications, communities, people, books, regulation tracking.</p>
+        </div>
+        <div class="module-meta">6 lessons · Resource Library</div>
+      </a>
+    </div>
+
+    <div class="callout" style="margin-top: 40px;">
+      <strong>What you have access to:</strong> all modules above, plus all 20 working deliverables (PDFs, spreadsheets, diagrams) downloadable from each module page. Video lessons appear inside each module once recorded; you'll receive an email when new video content is published. The full Resource Library (Module 8) compiles every external source referenced across the course.
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="foot-bottom">
+        <span>© <span data-year>2026</span> Lead Broker Blueprint by Luciano Moretti.</span>
+        <span><a href="../index.html">Home</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="../contact.html">Contact</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // v1: in production, this checks for valid session and redirects to login if absent
+    const email = (document.cookie.split('lbb_member_email=')[1] || '').split(';')[0] || 'member@email.com';
+    document.getElementById('member-email').textContent = email;
+    document.getElementById('logout-link').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.cookie = 'lbb_member=; Path=/; Max-Age=0';
+      document.cookie = 'lbb_member_email=; Path=/; Max-Age=0';
+      window.location.href = 'login.html';
+    });
+  </script>
+  <script src="../assets/main.js"></script>
+</body>
+</html>
