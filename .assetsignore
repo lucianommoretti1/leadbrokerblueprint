@@ -1,0 +1,20 @@
+# Files in this list will NOT be uploaded as static assets, so they won't
+# be exposed at a public URL on the worker. The worker code references them
+# directly (via import), but visitors should never see them.
+
+# Worker source (entry point + handler functions)
+_worker.js
+functions/**
+
+# Cloudflare config
+wrangler.jsonc
+.assetsignore
+
+# Docs / housekeeping
+README.md
+DEPLOYMENT.md
+
+# OS junk
+**/.DS_Store
+**/.git/**
+**/node_modules/**
