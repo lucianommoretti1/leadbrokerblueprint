@@ -2,21 +2,26 @@
   // Cloudflare Workers configuration for the Lead Broker Blueprint site.
   // Bindings declared here cannot be dropped by the dashboard.
   // Secrets (like AUTH_SECRET) are NOT defined here — they're added separately
-  // via Cloudflare dashboard or `wrangler secret put`.
+  // via the Cloudflare dashboard or `wrangler secret put`.
 
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "leadbrokerblueprint",
-  "compatibility_date": "2026-05-16",
+  "compatibility_date": "2026-05-13",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // Observability gives us logs + metrics for free in the Cloudflare dashboard.
+  "observability": {
+    "enabled": true
+  },
 
   // Serve every file in the repo root as a static asset.
-  // `not_found_handling`: send 404s to a friendly page if you ever add one.
   "assets": {
-    "directory": "./",
+    "directory": ".",
     "not_found_handling": "404-page"
   },
 
-  // KV namespaces — both already created on your account.
-  // BUYERS = the list of paid emails (written by stripe-webhook.js).
+  // KV namespaces — both already created on this account.
+  // BUYERS = the list of paid emails (written by the Stripe webhook function).
   // TOKENS = one-time magic-link tokens (set + consumed by the auth functions).
   "kv_namespaces": [
     {
