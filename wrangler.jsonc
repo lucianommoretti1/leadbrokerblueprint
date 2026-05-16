@@ -1,0 +1,31 @@
+{
+  // Cloudflare Workers configuration for the Lead Broker Blueprint site.
+  // Bindings declared here cannot be dropped by the dashboard.
+  // Secrets (like AUTH_SECRET) are NOT defined here — they're added separately
+  // via Cloudflare dashboard or `wrangler secret put`.
+
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "leadbrokerblueprint",
+  "compatibility_date": "2026-05-16",
+
+  // Serve every file in the repo root as a static asset.
+  // `not_found_handling`: send 404s to a friendly page if you ever add one.
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "404-page"
+  },
+
+  // KV namespaces — both already created on your account.
+  // BUYERS = the list of paid emails (written by stripe-webhook.js).
+  // TOKENS = one-time magic-link tokens (set + consumed by the auth functions).
+  "kv_namespaces": [
+    {
+      "binding": "BUYERS",
+      "id": "5275c1004ed147a0b270d634ebdce731"
+    },
+    {
+      "binding": "TOKENS",
+      "id": "9722af2950724491a164777f379aa7d8"
+    }
+  ]
+}
