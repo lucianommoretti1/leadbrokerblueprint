@@ -1,64 +1,67 @@
 // /api/auth/request-magic-link — generates and emails a one-time login link
 //
-// Flow:
-//   1. User enters their email at /members/login.html
-//   2. This function looks up the email in the BUYERS KV store
-//   3. If authorized, it generates a 15-minute JWT-like token, stores it in
-//      the TOKENS KV store, and emails the user a one-time login link
-//   4. User clicks the link → /api/auth/verify-magic-link consumes the token
-//      and sets a session cookie → user is redirected to /members/dashboard.html
-//
-// Required environment variables / bindings:
-//   RESEND_API_KEY            — for sending the magic-link email
-//   AUTH_SECRET               — random 32+ char string for token signing
-//   KV namespaces: BUYERS, TOKENS
+// TEMPORARY DEBUG MODE: returns full diagnostic info in the response body
+// instead of relying on console.log (which isn't surfacing in dashboard).
+// REVERT THIS AFTER DEBUGGING — currently leaks buyer enumeration.
 
 export async function onRequest(context) {
   const { request, env } = context;
+  const debug = {};
+
   if (request.method !== "POST") {
     return new Response("Method not allowed", { status: 405 });
   }
 
   let body;
   try { body = await request.json(); }
-  catch (e) { return new Response(JSON.stringify({ error: "Invalid JSON" }), { status: 400 }); }
+  catch (e) {
+    return new Response(JSON.stringify({ error: "Invalid JSON", debug }), { status: 400 });
+  }
+  debug.bodyReceived = body;
 
   const email = String(body.email || "").trim().toLowerCase();
+  debug.normalizedEmail = email;
+  debug.emailLength = email.length;
+
   if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-    return new Response(JSON.stringify({ error: "Invalid email" }), { status: 400 });
+    return new Response(JSON.stringify({ error: "Invalid email", debug }), { status: 400 });
   }
 
-  // Pre-launch placeholder: if BUYERS KV isn't bound yet, return 503
   if (!env || !env.BUYERS) {
-    return new Response(JSON.stringify({
-      error: "Members area activates at launch",
-      hint: "If you're an early purchaser, email leadbrokerblueprint@gmail.com for manual access.",
-    }), { status: 503, headers: { "Content-Type": "application/json" } });
+    debug.error = "BUYERS binding missing";
+    return new Response(JSON.stringify({ error: "Members area not configured", debug }), { status: 503 });
   }
+  debug.buyersBindingPresent = true;
+  debug.tokensBindingPresent = !!env.TOKENS;
+  debug.resendKeyPresent = !!env.RESEND_API_KEY;
+  debug.authSecretPresent = !!env.AUTH_SECRET;
 
   // Check if the email is an authorized buyer
   const buyer = await env.BUYERS.get(email);
-  console.log("DEBUG magic-link: lookup email=", JSON.stringify(email), "buyer=", JSON.stringify(buyer));
+  debug.kvLookupResult = buyer === null ? "NULL" : (typeof buyer === "string" ? buyer.substring(0, 100) : String(buyer));
+
+  // Also list all keys in BUYERS to confirm what's actually stored
+  try {
+    const list = await env.BUYERS.list({ limit: 10 });
+    debug.kvAllKeys = list.keys.map(k => ({ name: k.name, nameLength: k.name.length, nameHex: [...k.name].map(c => c.charCodeAt(0).toString(16)).join(" ") }));
+  } catch (e) {
+    debug.kvListError = String(e);
+  }
+
   if (!buyer) {
-    // Do not reveal whether the email is authorized — return the same response
-    // either way to prevent account-enumeration.
-    return new Response(JSON.stringify({ ok: true, sent: true }), { status: 200 });
+    return new Response(JSON.stringify({ ok: true, sent: false, reason: "buyer_not_found", debug }), { status: 200 });
   }
 
   // Generate a random token
   const token = crypto.randomUUID().replace(/-/g, "");
-  const expiresAt = Date.now() + 15 * 60 * 1000; // 15 minutes
-
-  // Store the token (single-use)
+  const expiresAt = Date.now() + 15 * 60 * 1000;
   await env.TOKENS.put(token, JSON.stringify({ email, expiresAt }), { expirationTtl: 900 });
 
-  // Construct the magic link
   const origin = new URL(request.url).origin;
   const magicLink = `${origin}/api/auth/verify-magic-link?token=${encodeURIComponent(token)}`;
+  debug.magicLink = magicLink;
 
-  // Send the magic-link email via Resend
   if (env.RESEND_API_KEY) {
-    console.log("DEBUG magic-link: calling Resend for", email);
     const resendResp = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -83,12 +86,13 @@ export async function onRequest(context) {
       }),
     });
     const respBody = await resendResp.text();
-    console.log("DEBUG magic-link: Resend status=", resendResp.status, "body=", respBody);
+    debug.resendStatus = resendResp.status;
+    debug.resendBody = respBody;
   } else {
-    console.warn("RESEND_API_KEY not set — magic link not actually sent:", magicLink);
+    debug.resendSkipped = "RESEND_API_KEY not set";
   }
 
-  return new Response(JSON.stringify({ ok: true, sent: true }), {
+  return new Response(JSON.stringify({ ok: true, sent: true, debug }), {
     status: 200,
     headers: { "Content-Type": "application/json" },
   });
