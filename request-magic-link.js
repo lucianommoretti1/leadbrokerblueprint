@@ -38,6 +38,7 @@ export async function onRequest(context) {
 
   // Check if the email is an authorized buyer
   const buyer = await env.BUYERS.get(email);
+  console.log("DEBUG magic-link: lookup email=", JSON.stringify(email), "buyer=", JSON.stringify(buyer));
   if (!buyer) {
     // Do not reveal whether the email is authorized — return the same response
     // either way to prevent account-enumeration.
@@ -57,7 +58,8 @@ export async function onRequest(context) {
 
   // Send the magic-link email via Resend
   if (env.RESEND_API_KEY) {
-    await fetch("https://api.resend.com/emails", {
+    console.log("DEBUG magic-link: calling Resend for", email);
+    const resendResp = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${env.RESEND_API_KEY}`,
@@ -80,6 +82,8 @@ export async function onRequest(context) {
         ].join("\n"),
       }),
     });
+    const respBody = await resendResp.text();
+    console.log("DEBUG magic-link: Resend status=", resendResp.status, "body=", respBody);
   } else {
     console.warn("RESEND_API_KEY not set — magic link not actually sent:", magicLink);
   }
