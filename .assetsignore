@@ -18,3 +18,5 @@ DEPLOYMENT.md
 **/.DS_Store
 **/.git/**
 **/node_modules/**
+request-magic-link.js
+stripe-webhook.js
