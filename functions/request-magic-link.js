@@ -29,10 +29,8 @@ export async function onRequest(context) {
   const origin = new URL(request.url).origin;
   const magicLink = `${origin}/api/auth/verify-magic-link?token=${encodeURIComponent(token)}`;
 
-  let resendStatus = null;
-  let resendBody = null;
   if (env.RESEND_API_KEY) {
-    const resendResp = await fetch("https://api.resend.com/emails", {
+    await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${env.RESEND_API_KEY}`,
@@ -55,11 +53,9 @@ export async function onRequest(context) {
         ].join("\n"),
       }),
     });
-    resendStatus = resendResp.status;
-    try { resendBody = await resendResp.text(); } catch (e) { resendBody = String(e); }
   }
 
-  return new Response(JSON.stringify({ ok: true, sent: true, _debug: { resendStatus, resendBody } }), {
+  return new Response(JSON.stringify({ ok: true, sent: true }), {
     status: 200,
     headers: { "Content-Type": "application/json" },
   });
