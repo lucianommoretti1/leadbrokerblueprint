@@ -36,11 +36,9 @@ export async function onRequest(context) {
   debug.resendKeyPresent = !!env.RESEND_API_KEY;
   debug.authSecretPresent = !!env.AUTH_SECRET;
 
-  // Check if the email is an authorized buyer
   const buyer = await env.BUYERS.get(email);
   debug.kvLookupResult = buyer === null ? "NULL" : (typeof buyer === "string" ? buyer.substring(0, 100) : String(buyer));
 
-  // Also list all keys in BUYERS to confirm what's actually stored
   try {
     const list = await env.BUYERS.list({ limit: 10 });
     debug.kvAllKeys = list.keys.map(k => ({ name: k.name, nameLength: k.name.length, nameHex: [...k.name].map(c => c.charCodeAt(0).toString(16)).join(" ") }));
@@ -52,7 +50,6 @@ export async function onRequest(context) {
     return new Response(JSON.stringify({ ok: true, sent: false, reason: "buyer_not_found", debug }), { status: 200 });
   }
 
-  // Generate a random token
   const token = crypto.randomUUID().replace(/-/g, "");
   const expiresAt = Date.now() + 15 * 60 * 1000;
   await env.TOKENS.put(token, JSON.stringify({ email, expiresAt }), { expirationTtl: 900 });
