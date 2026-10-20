@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B0E14"/>
+      <stop offset="1" stop-color="#1a1f2b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF6B1A"/>
+      <stop offset="1" stop-color="#FF8C42"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle orange glow corner -->
+  <ellipse cx="1100" cy="630" rx="500" ry="380" fill="#FF6B1A" opacity="0.10"/>
+
+  <!-- Brand mark + name (top-left) -->
+  <g transform="translate(80,90)">
+    <rect width="56" height="56" rx="12" fill="url(#accent)"/>
+    <text x="28" y="40" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="26" fill="#fff" text-anchor="middle">LB</text>
+    <text x="78" y="38" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="22" fill="#fff">Lead Broker Blueprint</text>
+    <text x="78" y="60" font-family="Inter, Arial, sans-serif" font-weight="500" font-size="14" fill="#888">by Luciano Moretti</text>
+  </g>
+
+  <!-- Title -->
+  <text font-family="Fraunces, Georgia, serif" font-weight="700" font-size="74" fill="#ffffff" y="220">
+    <tspan x="80" dy="0">Free articles &amp; tools</tspan><tspan x="80" dy="88">— Lead Broker</tspan><tspan x="80" dy="88">Blueprint</tspan>
+  </text>
+
+  <!-- Subtitle -->
+  <text font-family="Inter, Arial, sans-serif" font-weight="400" font-size="28" fill="#cfd4dd" y="524">
+    <tspan x="80" dy="0">Free educational content on lead brokering, compliance, vertical</tspan><tspan x="80" dy="36">guides, and an interactive revenue calculator.</tspan>
+  </text>
+
+  <!-- Bottom accent bar -->
+  <rect x="80" y="540" width="80" height="6" rx="3" fill="url(#accent)"/>
+
+  <!-- URL -->
+  <text x="80" y="585" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="20" fill="#888">leadbrokerblueprint.us</text>
+</svg>

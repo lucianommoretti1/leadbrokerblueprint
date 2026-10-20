@@ -1,0 +1,11 @@
+# Mac metadata clutter
+.DS_Store
+**/.DS_Store
+
+# Lock files from open Office documents
+.~lock.*
+*.tmp
+lu*.tmp
+
+# Node + build artifacts (just in case)
+node_modules/

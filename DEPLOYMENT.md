@@ -241,4 +241,4 @@ Once a quarter, audit the site against the four rules:
 - Vimeo Pro: https://vimeo.com/upgrade
 - Cloudflare Registrar: https://www.cloudflare.com/products/registrar/
 
-Maintained by Luciano Moretti. Questions: leadbrokerblueprint@gmail.com.
+Maintained by Lorenzo Marietti. Questions: leadbrokerblueprint@gmail.com.

@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lead-broker revenue calculator — estimate your monthly economics (free)</title>
+  <meta property="og:image" content="https://leadbrokerblueprint.us/assets/img/og/revenue-calculator.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://leadbrokerblueprint.us/assets/img/og/revenue-calculator.png" />
+
+  <meta name="description" content="A free interactive calculator that estimates monthly revenue, ad spend, and net contribution for a lead-brokering operation. Pick your vertical, set realistic numbers, see what the business looks like before you spend a dollar." />
+  <meta property="og:title" content="Free lead-broker revenue calculator" />
+  <meta property="og:description" content="Estimate monthly revenue, ad spend, and net contribution for your lead-brokering operation. Pre-loaded with realistic numbers for HVAC, PI, Medicare, and mortgage." />
+  <link rel="canonical" href="https://leadbrokerblueprint.us/tools/revenue-calculator.html" />
+  <meta name="theme-color" content="#FF6B1A" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <style>
+    .calc-wrap { max-width: 980px; margin: 0 auto; padding: 60px 24px 100px; }
+    .calc-header { text-align: center; margin-bottom: 50px; }
+    .calc-header h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; margin: 0 0 20px; font-weight: 700; }
+    .calc-header p { font-size: 1.15rem; line-height: 1.55; color: var(--ink-2, rgba(255,255,255,0.85)); max-width: 620px; margin: 0 auto; }
+
+    .calc-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 32px; }
+    @media (max-width: 880px) { .calc-grid { grid-template-columns: 1fr; } }
+
+    .calc-inputs {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line, rgba(255,255,255,0.08));
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .calc-inputs h2 { font-size: 1.1rem; margin: 0 0 20px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--accent, #FF6B1A); }
+    .input-group { margin-bottom: 22px; }
+    .input-group label {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--ink, #fff);
+    }
+    .input-group .hint { font-size: 0.82rem; color: var(--muted, rgba(255,255,255,0.55)); margin: 4px 0 8px; }
+    .input-group input, .input-group select {
+      width: 100%;
+      padding: 12px 14px;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid var(--line, rgba(255,255,255,0.12));
+      border-radius: 8px;
+      color: var(--ink, #fff);
+      font-family: inherit;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .input-group input:focus, .input-group select:focus { border-color: var(--accent, #FF6B1A); }
+    .input-group .value-display {
+      display: inline-block;
+      margin-left: 10px;
+      font-variant-numeric: tabular-nums;
+      color: var(--accent, #FF6B1A);
+      font-weight: 700;
+    }
+
+    .calc-results {
+      background: linear-gradient(135deg, rgba(255,107,26,0.06) 0%, rgba(255,107,26,0.01) 100%);
+      border: 2px solid var(--accent, #FF6B1A);
+      border-radius: 12px;
+      padding: 32px;
+    }
+    .calc-results h2 { font-family: 'Fraunces', serif; font-size: 1.6rem; margin: 0 0 4px; }
+    .calc-results .subtitle { font-size: 0.92rem; color: var(--ink-2, rgba(255,255,255,0.7)); margin: 0 0 28px; }
+
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .result-row:last-of-type { border-bottom: none; }
+    .result-label { font-size: 0.95rem; color: var(--ink-2, rgba(255,255,255,0.82)); }
+    .result-value { font-variant-numeric: tabular-nums; font-weight: 700; font-size: 1.15rem; color: var(--ink, #fff); }
+    .result-row.net { padding: 20px 0; border-top: 2px solid var(--accent, #FF6B1A); border-bottom: 2px solid var(--accent, #FF6B1A); margin-top: 8px; }
+    .result-row.net .result-label { font-size: 1.05rem; font-weight: 700; color: var(--ink, #fff); }
+    .result-row.net .result-value { font-family: 'Fraunces', serif; font-size: 1.8rem; color: var(--accent, #FF6B1A); }
+    .negative { color: #ff6464 !important; }
+
+    .calc-disclaimer {
+      margin-top: 32px;
+      padding: 18px 22px;
+      background: rgba(255,193,7,0.05);
+      border-left: 3px solid #FFC107;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.88rem;
+      color: var(--ink-2, rgba(255,255,255,0.75));
+    }
+
+    .calc-cta {
+      margin: 50px auto 0;
+      max-width: 720px;
+      padding: 36px 40px;
+      background: linear-gradient(135deg, #11151c 0%, #1a1f2b 100%);
+      border: 2px solid var(--accent, #FF6B1A);
+      border-radius: 14px;
+      text-align: center;
+    }
+    .calc-cta h3 { font-family: 'Fraunces', serif; font-size: 1.6rem; margin: 0 0 12px; }
+    .calc-cta p { font-size: 1.02rem; color: rgba(255,255,255,0.85); line-height: 1.6; margin: 0 0 24px; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="../index.html" class="brand"><span class="brand-mark">LB</span>Lead Broker Blueprint</a>
+      <div class="nav-links">
+        <a href="../index.html#modules">Modules</a>
+        <a href="../index.html#pricing">Pricing</a>
+        <a href="../learn/">Learn</a>
+        <a href="../index.html#pricing" class="btn btn-primary btn-sm" style="margin-left:10px">Reserve your spot →</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <div class="calc-wrap">
+      <div class="calc-header">
+        <span class="eyebrow">Free tool</span>
+        <h1>Lead-broker revenue calculator</h1>
+        <p>Estimate monthly revenue, ad spend, and net contribution for a lead-brokering operation. Pre-loaded with realistic 2026 numbers for the four major verticals. Adjust to match your specific situation — all numbers update in real time. Nothing is saved or sent anywhere.</p>
+      </div>
+
+      <div class="calc-grid">
+        <div class="calc-inputs">
+          <h2>Your assumptions</h2>
+
+          <div class="input-group">
+            <label for="vertical">Vertical preset</label>
+            <div class="hint">Pre-loads realistic CPC, payout, and conversion ranges. You can still adjust everything below.</div>
+            <select id="vertical">
+              <option value="hvac">HVAC replacement</option>
+              <option value="pi">Personal injury</option>
+              <option value="medicare">Medicare</option>
+              <option value="mortgage">Mortgage</option>
+              <option value="custom">Custom (don't load preset)</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="cpc">Cost per click (USD) <span class="value-display" id="cpc-val">$7.42</span></label>
+            <input type="range" id="cpc" min="0.5" max="60" step="0.1" value="7.42" />
+            <div class="hint">Google Ads average for your vertical/geo.</div>
+          </div>
+
+          <div class="input-group">
+            <label for="clicks-per-submission">Clicks per form submission <span class="value-display" id="cps-val">4</span></label>
+            <input type="range" id="clicks-per-submission" min="1" max="20" step="1" value="4" />
+            <div class="hint">~4-7 clicks per form is typical for well-built landing pages.</div>
+          </div>
+
+          <div class="input-group">
+            <label for="submissions-per-day">Form submissions per day <span class="value-display" id="spd-val">15</span></label>
+            <input type="range" id="submissions-per-day" min="1" max="100" step="1" value="15" />
+          </div>
+
+          <div class="input-group">
+            <label for="qualification-rate">Qualification rate <span class="value-display" id="qr-val">75%</span></label>
+            <input type="range" id="qualification-rate" min="20" max="100" step="1" value="75" />
+            <div class="hint">% of form submissions that match your buyer's spec after intake.</div>
+          </div>
+
+          <div class="input-group">
+            <label for="buyer-payout">Buyer payout per qualified lead (USD) <span class="value-display" id="bp-val">$230</span></label>
+            <input type="range" id="buyer-payout" min="20" max="800" step="5" value="230" />
+          </div>
+
+          <div class="input-group">
+            <label for="accept-rate">Buyer accept rate <span class="value-display" id="ar-val">85%</span></label>
+            <input type="range" id="accept-rate" min="40" max="100" step="1" value="85" />
+            <div class="hint">% of qualified leads the buyer keeps (others get returned/disputed).</div>
+          </div>
+
+          <div class="input-group">
+            <label for="other-costs">Other monthly costs (USD) <span class="value-display" id="oc-val">$1,200</span></label>
+            <input type="range" id="other-costs" min="0" max="20000" step="50" value="1200" />
+            <div class="hint">Stack subscriptions, call agents, platform fees, etc.</div>
+          </div>
+        </div>
+
+        <div class="calc-results">
+          <h2>Monthly economics</h2>
+          <p class="subtitle">Assumes 30 days of operation. Real businesses fluctuate; these are central-tendency estimates.</p>
+
+          <div class="result-row">
+            <div class="result-label">Form submissions / month</div>
+            <div class="result-value" id="r-submissions">450</div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Qualified leads / month</div>
+            <div class="result-value" id="r-qualified">338</div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Leads accepted by buyer</div>
+            <div class="result-value" id="r-accepted">287</div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Gross revenue</div>
+            <div class="result-value" id="r-revenue">$66,000</div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Ad spend</div>
+            <div class="result-value" id="r-adspend negative">($13,356)</div>
+          </div>
+          <div class="result-row">
+            <div class="result-label">Other costs</div>
+            <div class="result-value negative" id="r-othercosts">($1,200)</div>
+          </div>
+          <div class="result-row net">
+            <div class="result-label">Net contribution</div>
+            <div class="result-value" id="r-net">$51,444</div>
+          </div>
+
+          <div class="calc-disclaimer">
+            <strong>Honest note:</strong> these numbers reflect what's possible at scale with stable operations — NOT what new operators typically produce in months 1-6. Most operators take 6-12 months to reach the upper end of these ranges. Treat the calculator as a feasibility check, not a forecast.
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-cta">
+        <h3>Want to actually build this?</h3>
+        <p>The Lead Broker Blueprint is the complete operating manual — 60 lessons, 25 working deliverables, the same unit-economics math turned into a working spreadsheet calculator, the playbook for landing the buyers, the scripts for converting the leads. 30-day no-questions refund.</p>
+        <a href="../index.html#pricing" class="btn btn-primary" style="margin-left: 10px;">See pricing →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="foot-bottom">
+        <span>© <span data-year>2026</span> Lead Broker Blueprint by Lorenzo Marietti.</span>
+        <span><a href="../index.html">Home</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="../refund.html">Refund</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Vertical presets — realistic 2026 numbers
+    const PRESETS = {
+      hvac:     { cpc: 7.42, cps: 4, spd: 15, qr: 75, bp: 230, ar: 85, oc: 1200 },
+      pi:       { cpc: 38.0, cps: 6, spd: 8,  qr: 55, bp: 380, ar: 70, oc: 2200 },
+      medicare: { cpc: 12.5, cps: 5, spd: 20, qr: 60, bp: 95,  ar: 80, oc: 1500 },
+      mortgage: { cpc: 14.2, cps: 5, spd: 18, qr: 50, bp: 120, ar: 75, oc: 1800 },
+    };
+
+    const $ = (id) => document.getElementById(id);
+    const fmtMoney = (n) => "$" + Math.round(n).toLocaleString();
+    const fmtNeg = (n) => "(" + fmtMoney(n) + ")";
+
+    function bindRange(id, valId, fmt) {
+      $(id).addEventListener("input", (e) => {
+        $(valId).textContent = fmt(parseFloat(e.target.value));
+        compute();
+      });
+    }
+
+    bindRange("cpc", "cpc-val", (v) => "$" + v.toFixed(2));
+    bindRange("clicks-per-submission", "cps-val", (v) => String(Math.round(v)));
+    bindRange("submissions-per-day", "spd-val", (v) => String(Math.round(v)));
+    bindRange("qualification-rate", "qr-val", (v) => Math.round(v) + "%");
+    bindRange("buyer-payout", "bp-val", (v) => "$" + Math.round(v));
+    bindRange("accept-rate", "ar-val", (v) => Math.round(v) + "%");
+    bindRange("other-costs", "oc-val", (v) => "$" + Math.round(v).toLocaleString());
+
+    $("vertical").addEventListener("change", (e) => {
+      const preset = PRESETS[e.target.value];
+      if (!preset) return; // custom
+      $("cpc").value = preset.cpc; $("cpc-val").textContent = "$" + preset.cpc.toFixed(2);
+      $("clicks-per-submission").value = preset.cps; $("cps-val").textContent = preset.cps;
+      $("submissions-per-day").value = preset.spd; $("spd-val").textContent = preset.spd;
+      $("qualification-rate").value = preset.qr; $("qr-val").textContent = preset.qr + "%";
+      $("buyer-payout").value = preset.bp; $("bp-val").textContent = "$" + preset.bp;
+      $("accept-rate").value = preset.ar; $("ar-val").textContent = preset.ar + "%";
+      $("other-costs").value = preset.oc; $("oc-val").textContent = "$" + preset.oc.toLocaleString();
+      compute();
+    });
+
+    function compute() {
+      const cpc = parseFloat($("cpc").value);
+      const cps = parseFloat($("clicks-per-submission").value);
+      const spd = parseFloat($("submissions-per-day").value);
+      const qr = parseFloat($("qualification-rate").value) / 100;
+      const bp = parseFloat($("buyer-payout").value);
+      const ar = parseFloat($("accept-rate").value) / 100;
+      const oc = parseFloat($("other-costs").value);
+
+      const submissionsMonth = spd * 30;
+      const qualifiedMonth = submissionsMonth * qr;
+      const acceptedMonth = qualifiedMonth * ar;
+      const revenue = acceptedMonth * bp;
+      const adSpend = submissionsMonth * cps * cpc;
+      const net = revenue - adSpend - oc;
+
+      $("r-submissions").textContent = Math.round(submissionsMonth).toLocaleString();
+      $("r-qualified").textContent = Math.round(qualifiedMonth).toLocaleString();
+      $("r-accepted").textContent = Math.round(acceptedMonth).toLocaleString();
+      $("r-revenue").textContent = fmtMoney(revenue);
+      $("r-adspend").textContent = fmtNeg(adSpend);
+      $("r-othercosts").textContent = fmtNeg(oc);
+
+      const netEl = $("r-net");
+      netEl.textContent = net >= 0 ? fmtMoney(net) : fmtNeg(Math.abs(net));
+      netEl.style.color = net >= 0 ? "#FF6B1A" : "#ff6464";
+    }
+
+    compute();
+  </script>
+</body>
+</html>

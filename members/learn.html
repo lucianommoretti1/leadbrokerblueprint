@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Course player — Lead Broker Blueprint</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <style>
+    /* === COURSE PLAYER LAYOUT === */
+    body { overflow-x: hidden; }
+
+    .player-shell {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      height: calc(100vh - 64px); /* below navbar */
+      max-height: calc(100vh - 64px);
+      overflow: hidden;
+    }
+
+    /* Sidebar */
+    .player-sidebar {
+      background: var(--bg-2, #11151c);
+      border-right: 1px solid var(--line, rgba(255,255,255,0.08));
+      overflow-y: auto;
+      padding: 0;
+    }
+    .sidebar-header {
+      padding: 22px 22px 16px;
+      border-bottom: 1px solid var(--line, rgba(255,255,255,0.08));
+      position: sticky; top: 0;
+      background: var(--bg-2, #11151c);
+      z-index: 2;
+    }
+    .sidebar-title { font-weight: 700; font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted, rgba(255,255,255,0.6)); margin: 0 0 12px; }
+    .progress-track { width: 100%; height: 6px; background: rgba(255,255,255,0.08); border-radius: 4px; overflow: hidden; margin-bottom: 8px; }
+    .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent, #FF6B1A) 0%, #FF8C42 100%); width: 0%; transition: width 0.4s ease; border-radius: 4px; }
+    .progress-label { font-size: 0.78rem; color: var(--muted, rgba(255,255,255,0.55)); }
+
+    .sb-module {
+      padding: 16px 12px 8px;
+      border-bottom: 1px solid var(--line, rgba(255,255,255,0.05));
+    }
+    .sb-module-active { background: rgba(255,107,26,0.03); }
+    .sb-module-head { display: flex; align-items: center; gap: 12px; padding: 0 10px 10px; }
+    .sb-module-num {
+      width: 30px; height: 30px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      color: var(--ink, rgba(255,255,255,0.85));
+      font-weight: 700; font-size: 0.9rem;
+      display: grid; place-items: center;
+      flex-shrink: 0;
+    }
+    .sb-module-active .sb-module-num { background: var(--accent, #FF6B1A); color: #fff; }
+    .sb-module-meta { flex: 1; min-width: 0; }
+    .sb-module-title { font-weight: 600; font-size: 0.92rem; line-height: 1.3; color: var(--ink, rgba(255,255,255,0.92)); }
+    .sb-module-stats { font-size: 0.74rem; color: var(--muted, rgba(255,255,255,0.5)); margin-top: 2px; }
+
+    .sb-lessons { list-style: none; padding: 0; margin: 0; }
+    .sb-lesson {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 6px;
+      margin: 1px 0;
+      font-size: 0.86rem;
+      color: var(--ink-2, rgba(255,255,255,0.78));
+      transition: background 0.15s, color 0.15s;
+    }
+    .sb-lesson:hover { background: rgba(255,255,255,0.04); color: var(--ink, #fff); }
+    .sb-lesson-active {
+      background: rgba(255,107,26,0.12) !important;
+      color: var(--accent, #FF6B1A);
+      font-weight: 600;
+    }
+    .sb-icon {
+      width: 18px; height: 18px;
+      display: grid; place-items: center;
+      flex-shrink: 0;
+      border-radius: 50%;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .sb-icon-done { background: var(--accent, #FF6B1A); color: #fff; }
+    .sb-icon-todo { background: transparent; border: 1.5px solid rgba(255,255,255,0.18); color: rgba(255,255,255,0.4); }
+    .sb-lesson-id { flex-shrink: 0; font-variant-numeric: tabular-nums; width: 34px; color: var(--muted, rgba(255,255,255,0.45)); font-size: 0.78rem; }
+    .sb-lesson-title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .sb-lesson-active .sb-lesson-id { color: var(--accent, #FF6B1A); }
+
+    /* Content pane */
+    .player-content-wrapper {
+      overflow-y: auto;
+      padding: 0;
+    }
+    .player-content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 50px 40px 120px;
+    }
+
+    .lp-breadcrumb {
+      font-size: 0.85rem;
+      color: var(--muted, rgba(255,255,255,0.55));
+      margin-bottom: 18px;
+      letter-spacing: 0.02em;
+    }
+    .lp-bc-sep { margin: 0 8px; opacity: 0.4; }
+    .lp-bc-lesson { color: var(--accent, #FF6B1A); font-weight: 600; }
+
+    .lp-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 32px;
+      color: var(--ink, #fff);
+    }
+
+    .lp-objective {
+      background: rgba(255,107,26,0.06);
+      border-left: 3px solid var(--accent, #FF6B1A);
+      padding: 20px 24px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 36px;
+    }
+    .lp-objective-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--accent, #FF6B1A);
+      margin-bottom: 8px;
+    }
+    .lp-objective p {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: var(--ink-2, rgba(255,255,255,0.88));
+    }
+
+    .lp-summary h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      margin: 0 0 12px;
+      color: var(--ink, #fff);
+    }
+    .lp-summary p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--ink-2, rgba(255,255,255,0.84));
+      margin: 0 0 32px;
+    }
+
+    .lp-pdf-cta {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line, rgba(255,255,255,0.08));
+      padding: 24px 28px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+    .lp-pdf-cta h2 { font-size: 1.05rem; font-weight: 700; margin: 0 0 8px; }
+    .lp-pdf-cta p { font-size: 0.95rem; line-height: 1.6; color: var(--ink-2, rgba(255,255,255,0.78)); margin: 0 0 18px; }
+    .lp-pdf-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+    .lp-pdf-buttons .btn { font-size: 0.9rem; padding: 10px 18px; }
+
+    .lp-actions {
+      margin: 40px 0;
+      padding: 24px 0;
+      border-top: 1px solid var(--line, rgba(255,255,255,0.08));
+      border-bottom: 1px solid var(--line, rgba(255,255,255,0.08));
+      text-align: center;
+    }
+    .lp-action-toggle { font-size: 1rem !important; padding: 14px 28px !important; }
+
+    .lp-nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .lp-nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 20px;
+      border: 1px solid var(--line, rgba(255,255,255,0.1));
+      background: transparent;
+      border-radius: 10px;
+      color: var(--ink-2, rgba(255,255,255,0.85));
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+      text-align: left;
+      font: inherit;
+    }
+    .lp-nav-btn:hover {
+      border-color: var(--accent, #FF6B1A);
+      background: rgba(255,107,26,0.04);
+    }
+    .lp-nav-next { justify-content: flex-end; text-align: right; }
+    .lp-nav-arrow { font-size: 1.4rem; color: var(--accent, #FF6B1A); flex-shrink: 0; }
+    .lp-nav-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted, rgba(255,255,255,0.5)); margin-bottom: 4px; }
+    .lp-nav-title { font-size: 0.95rem; font-weight: 600; line-height: 1.3; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    /* Mobile responsive */
+    .sidebar-toggle { display: none; }
+    @media (max-width: 900px) {
+      .player-shell { grid-template-columns: 1fr; }
+      .player-sidebar {
+        position: fixed;
+        top: 64px; left: 0; bottom: 0;
+        width: 320px;
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+        z-index: 100;
+      }
+      body.sidebar-open .player-sidebar { transform: translateX(0); }
+      body.sidebar-open::after {
+        content: "";
+        position: fixed;
+        inset: 64px 0 0 0;
+        background: rgba(0,0,0,0.6);
+        z-index: 99;
+      }
+      .sidebar-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--accent, #FF6B1A);
+        color: #fff;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.88rem;
+        cursor: pointer;
+        margin-bottom: 20px;
+      }
+      .player-content { padding: 30px 22px 100px; }
+      .lp-nav { grid-template-columns: 1fr; }
+      .lp-nav-next { justify-content: flex-start; text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="../index.html" class="brand">
+        <span class="brand-mark">LB</span>
+        Lead Broker Blueprint
+      </a>
+      <div class="nav-links">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="#" id="logout-link">Sign out</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="player-shell" id="learn-root">
+    <aside class="player-sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-title">Your progress</div>
+        <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+        <div class="progress-label" id="progress-label">0 of 60 lessons complete · 0%</div>
+      </div>
+      <div id="sidebar-modules"></div>
+    </aside>
+
+    <div class="player-content-wrapper" id="content-pane-wrapper">
+      <div class="player-content">
+        <button class="sidebar-toggle" onclick="toggleSidebar()">☰ Lessons</button>
+        <div id="content-pane"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/learn.js"></script>
+  <script>
+    // Sign-out: clear the session cookie by hitting a stub endpoint, fall back to clearing locally.
+    document.getElementById('logout-link').addEventListener('click', function(e){
+      e.preventDefault();
+      document.cookie = 'lbb_member=; Path=/; Max-Age=0';
+      window.location.href = '../index.html';
+    });
+  </script>
+</body>
+</html>

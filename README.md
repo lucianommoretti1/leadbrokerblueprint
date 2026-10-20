@@ -1,6 +1,6 @@
 # Lead Broker Blueprint — website
 
-The marketing site and members area for **Lead Broker Blueprint by Luciano Moretti**.
+The marketing site and members area for **Lead Broker Blueprint by Lorenzo Marietti**.
 
 A self-hosted, single-long-scroll sales page plus a gated members area with eight module pages. Bright, modern, upbeat aesthetic. Self-contained HTML/CSS/JS — no build step.
 

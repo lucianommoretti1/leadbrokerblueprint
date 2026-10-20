@@ -32,7 +32,10 @@ export default {
     // ---------- Members area gate ----------
     // /members/login.html is public so visitors can request a magic link.
     // Everything else under /members/ requires a valid session cookie.
-    if (path.startsWith("/members/") && path !== "/members/login.html") {
+    // Course materials (under /Module N - .../) are also gated.
+    const isMembersPath = path.startsWith("/members/") && path !== "/members/login.html";
+    const isCoursePath = /^\/Module%20[1-8]\b|^\/Module [1-8]\b/.test(path);
+    if (isMembersPath || isCoursePath) {
       const ok = await verifyMemberSession(request, env);
       if (!ok) {
         return Response.redirect(`${url.origin}/members/login.html`, 302);

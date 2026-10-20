@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1600" height="1200" fill="#FAFBFD"/>
+
+  <!-- Title -->
+  <text x="800" y="50" text-anchor="middle" font-size="30" font-weight="700" fill="#1F3864">Landing Page Anatomy — What Converts vs. What Doesn't</text>
+  <text x="800" y="80" text-anchor="middle" font-size="16" fill="#595959" font-style="italic">Module 5 deliverable  •  Lead Broker Blueprint by Luciano Moretti  •  v1.0 May 2026</text>
+
+  <!-- ─────────────────────── LEFT: GOOD PAGE ─────────────────────── -->
+  <g transform="translate(60, 120)">
+    <!-- Page mock -->
+    <rect x="0" y="0" width="640" height="1000" rx="8" fill="#FFFFFF" stroke="#548235" stroke-width="3"/>
+
+    <!-- Section: Header / hero -->
+    <rect x="0" y="0" width="640" height="40" fill="#548235"/>
+    <text x="320" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">CONVERTS — clean, compliant, matched to traffic</text>
+
+    <!-- Hero offer -->
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="600" height="100" rx="4" fill="#EAF2FB"/>
+      <text x="20" y="36" font-size="22" font-weight="700" fill="#1F3864">Injured in a car accident in Atlanta?</text>
+      <text x="20" y="64" font-size="14" fill="#333333">Free case evaluation in under 60 seconds — no obligation.</text>
+      <rect x="20" y="76" width="180" height="18" rx="4" fill="#1F3864"/>
+      <text x="110" y="89" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">START CASE EVALUATION</text>
+    </g>
+    <text x="660" y="100" font-size="13" fill="#548235" font-weight="700">①</text>
+    <text x="660" y="118" font-size="12" fill="#333333">Headline mirrors</text>
+    <text x="660" y="132" font-size="12" fill="#333333">search query.</text>
+    <text x="660" y="148" font-size="12" fill="#333333">One CTA, clear.</text>
+
+    <!-- Trust signals -->
+    <g transform="translate(20, 180)">
+      <rect x="0" y="0" width="600" height="60" rx="4" fill="#F7F7F7" stroke="#BFBFBF"/>
+      <text x="20" y="22" font-size="13" font-weight="700" fill="#1F3864">Members of: GA Bar Assn. • State Bar of GA</text>
+      <text x="20" y="42" font-size="12" fill="#595959">BBB Accredited Business since 2012  •  Member: AAJ</text>
+    </g>
+    <text x="660" y="200" font-size="13" fill="#548235" font-weight="700">②</text>
+    <text x="660" y="218" font-size="12" fill="#333333">Real trust signals:</text>
+    <text x="660" y="232" font-size="12" fill="#333333">bar memberships,</text>
+    <text x="660" y="246" font-size="12" fill="#333333">BBB, professional</text>
+    <text x="660" y="260" font-size="12" fill="#333333">associations.</text>
+
+    <!-- Multi-step form -->
+    <g transform="translate(20, 260)">
+      <rect x="0" y="0" width="600" height="280" rx="6" fill="#FFFFFF" stroke="#1F3864" stroke-width="2"/>
+      <rect x="0" y="0" width="600" height="30" fill="#1F3864"/>
+      <text x="20" y="20" font-size="13" font-weight="700" fill="#FFFFFF">Step 1 of 3 — Tell us about your accident</text>
+
+      <text x="20" y="58" font-size="12" font-weight="700" fill="#333333">When did the accident occur?</text>
+      <rect x="20" y="66" width="560" height="28" rx="4" fill="#F7F7F7" stroke="#BFBFBF"/>
+      <text x="34" y="84" font-size="11" fill="#808080">Select a date range…</text>
+
+      <text x="20" y="120" font-size="12" font-weight="700" fill="#333333">Were you injured?</text>
+      <rect x="20" y="128" width="100" height="24" rx="3" fill="#FFFFFF" stroke="#1F3864"/>
+      <text x="70" y="144" text-anchor="middle" font-size="11" fill="#1F3864">Yes</text>
+      <rect x="130" y="128" width="100" height="24" rx="3" fill="#FFFFFF" stroke="#1F3864"/>
+      <text x="180" y="144" text-anchor="middle" font-size="11" fill="#1F3864">No</text>
+
+      <text x="20" y="178" font-size="12" font-weight="700" fill="#333333">Have you retained an attorney already?</text>
+      <rect x="20" y="186" width="100" height="24" rx="3" fill="#FFFFFF" stroke="#1F3864"/>
+      <text x="70" y="202" text-anchor="middle" font-size="11" fill="#1F3864">Yes</text>
+      <rect x="130" y="186" width="100" height="24" rx="3" fill="#FFFFFF" stroke="#1F3864"/>
+      <text x="180" y="202" text-anchor="middle" font-size="11" fill="#1F3864">No</text>
+
+      <rect x="20" y="234" width="180" height="30" rx="4" fill="#548235"/>
+      <text x="110" y="253" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">CONTINUE →</text>
+    </g>
+    <text x="660" y="290" font-size="13" fill="#548235" font-weight="700">③</text>
+    <text x="660" y="308" font-size="12" fill="#333333">Multi-step form.</text>
+    <text x="660" y="322" font-size="12" fill="#333333">Qualification first,</text>
+    <text x="660" y="336" font-size="12" fill="#333333">contact info on</text>
+    <text x="660" y="350" font-size="12" fill="#333333">step 3. Higher</text>
+    <text x="660" y="364" font-size="12" fill="#333333">completion than</text>
+    <text x="660" y="378" font-size="12" fill="#333333">single-page form.</text>
+
+    <!-- Compliance disclosure block -->
+    <g transform="translate(20, 560)">
+      <rect x="0" y="0" width="600" height="170" rx="4" fill="#FDE9E9" stroke="#C00000" stroke-width="1"/>
+      <text x="20" y="22" font-size="12" font-weight="700" fill="#C00000">Consent disclosure (clear and conspicuous, on this page):</text>
+      <text x="20" y="44" font-size="11" fill="#333333">By submitting this form, I authorize Smith Legal Group and its</text>
+      <text x="20" y="60" font-size="11" fill="#333333">named participating providers (listed at smithlegal.com/providers)</text>
+      <text x="20" y="76" font-size="11" fill="#333333">to contact me by phone, including by automated telephone dialing</text>
+      <text x="20" y="92" font-size="11" fill="#333333">system or prerecorded voice, and by SMS text message, about</text>
+      <text x="20" y="108" font-size="11" fill="#333333">my potential case. I understand that my consent is not a condition</text>
+      <text x="20" y="124" font-size="11" fill="#333333">of any purchase. Standard message and data rates may apply.</text>
+      <rect x="20" y="138" width="14" height="14" fill="#FFFFFF" stroke="#1F3864" stroke-width="1.5"/>
+      <text x="42" y="150" font-size="11" font-weight="700" fill="#333333">I agree to the disclosure above (required to continue)</text>
+    </g>
+    <text x="660" y="600" font-size="13" fill="#548235" font-weight="700">④</text>
+    <text x="660" y="618" font-size="12" fill="#333333">PEWC: clear,</text>
+    <text x="660" y="632" font-size="12" fill="#333333">conspicuous,</text>
+    <text x="660" y="646" font-size="12" fill="#333333">names parties,</text>
+    <text x="660" y="660" font-size="12" fill="#333333">authorizes auto-</text>
+    <text x="660" y="674" font-size="12" fill="#333333">dialer/prerecorded,</text>
+    <text x="660" y="688" font-size="12" fill="#333333">states not a</text>
+    <text x="660" y="702" font-size="12" fill="#333333">condition of</text>
+    <text x="660" y="716" font-size="12" fill="#333333">purchase, signed</text>
+    <text x="660" y="730" font-size="12" fill="#333333">(checkbox).</text>
+
+    <!-- What happens next -->
+    <g transform="translate(20, 750)">
+      <rect x="0" y="0" width="600" height="80" rx="4" fill="#EAF2FB"/>
+      <text x="20" y="24" font-size="13" font-weight="700" fill="#1F3864">What happens next:</text>
+      <text x="20" y="46" font-size="12" fill="#333333">A case manager will call you within 15 minutes during business hours.</text>
+      <text x="20" y="64" font-size="12" fill="#333333">The call takes 5-10 minutes. No obligation; you can end the call anytime.</text>
+    </g>
+    <text x="660" y="780" font-size="13" fill="#548235" font-weight="700">⑤</text>
+    <text x="660" y="798" font-size="12" fill="#333333">Sets expectation;</text>
+    <text x="660" y="812" font-size="12" fill="#333333">reduces post-submit</text>
+    <text x="660" y="826" font-size="12" fill="#333333">surprise; improves</text>
+    <text x="660" y="840" font-size="12" fill="#333333">intake conversion.</text>
+
+    <!-- Footer -->
+    <g transform="translate(20, 850)">
+      <rect x="0" y="0" width="600" height="130" rx="4" fill="#F7F7F7" stroke="#BFBFBF"/>
+      <text x="20" y="22" font-size="11" font-weight="700" fill="#333333">Smith Legal Group, 100 Peachtree St NE Suite 2200, Atlanta, GA 30303</text>
+      <text x="20" y="42" font-size="11" fill="#333333">(404) 555-0100  •  contact@smithlegal.com</text>
+      <text x="20" y="74" font-size="10" fill="#1F3864" text-decoration="underline">Privacy Notice</text>
+      <text x="100" y="74" font-size="10" fill="#1F3864" text-decoration="underline">Terms of Use</text>
+      <text x="180" y="74" font-size="10" fill="#1F3864" text-decoration="underline">Do Not Sell or Share My Info</text>
+      <text x="20" y="96" font-size="10" fill="#595959">Attorney advertising. Prior results do not guarantee a similar outcome.</text>
+      <text x="20" y="110" font-size="10" fill="#595959">© 2026 Smith Legal Group. All rights reserved.</text>
+    </g>
+    <text x="660" y="890" font-size="13" fill="#548235" font-weight="700">⑥</text>
+    <text x="660" y="908" font-size="12" fill="#333333">CAN-SPAM-</text>
+    <text x="660" y="922" font-size="12" fill="#333333">compliant address;</text>
+    <text x="660" y="936" font-size="12" fill="#333333">CCPA opt-out link;</text>
+    <text x="660" y="950" font-size="12" fill="#333333">attorney-advertising</text>
+    <text x="660" y="964" font-size="12" fill="#333333">disclaimer (state-</text>
+    <text x="660" y="978" font-size="12" fill="#333333">specific).</text>
+  </g>
+
+  <!-- ─────────────────────── RIGHT: BAD PAGE ─────────────────────── -->
+  <g transform="translate(840, 120)">
+    <rect x="0" y="0" width="640" height="1000" rx="8" fill="#FFFFFF" stroke="#C00000" stroke-width="3"/>
+
+    <!-- Section: Header -->
+    <rect x="0" y="0" width="640" height="40" fill="#C00000"/>
+    <text x="320" y="26" text-anchor="middle" font-size="16" font-weight="700" fill="#FFFFFF">DOES NOT CONVERT — non-compliant, low-trust</text>
+
+    <!-- Hero with generic copy -->
+    <g transform="translate(20, 60)">
+      <rect x="0" y="0" width="600" height="100" rx="4" fill="#EAF2FB"/>
+      <text x="20" y="36" font-size="22" font-weight="700" fill="#1F3864">GET LEADS NOW!!!</text>
+      <text x="20" y="64" font-size="14" fill="#333333">Click here to get qualified leads delivered to your business today!</text>
+      <rect x="20" y="76" width="220" height="18" rx="4" fill="#C00000"/>
+      <text x="130" y="89" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF">CLICK NOW BEFORE OFFER EXPIRES</text>
+    </g>
+    <text x="660" y="100" font-size="13" fill="#C00000" font-weight="700">⊗</text>
+    <text x="660" y="118" font-size="12" fill="#333333">Generic copy;</text>
+    <text x="660" y="132" font-size="12" fill="#333333">no match to</text>
+    <text x="660" y="146" font-size="12" fill="#333333">traffic intent;</text>
+    <text x="660" y="160" font-size="12" fill="#333333">fake urgency.</text>
+
+    <!-- Fake testimonials -->
+    <g transform="translate(20, 180)">
+      <rect x="0" y="0" width="600" height="120" rx="4" fill="#F7F7F7" stroke="#BFBFBF"/>
+      <text x="20" y="22" font-size="13" font-weight="700" fill="#1F3864">WHAT OUR CUSTOMERS SAY</text>
+      <circle cx="50" cy="58" r="18" fill="#BFBFBF"/>
+      <text x="80" y="55" font-size="11" font-weight="700" fill="#333333">"Best service ever! 5 stars! ⭐⭐⭐⭐⭐"</text>
+      <text x="80" y="70" font-size="10" fill="#595959">— Jennifer K., Atlanta</text>
+      <circle cx="50" cy="98" r="18" fill="#BFBFBF"/>
+      <text x="80" y="95" font-size="11" font-weight="700" fill="#333333">"They won my case in 24 hours! Got $50,000!"</text>
+      <text x="80" y="110" font-size="10" fill="#595959">— Mike S., satisfied customer</text>
+    </g>
+    <text x="660" y="220" font-size="13" fill="#C00000" font-weight="700">⊗</text>
+    <text x="660" y="238" font-size="12" fill="#333333">Stock-photo</text>
+    <text x="660" y="252" font-size="12" fill="#333333">testimonials.</text>
+    <text x="660" y="266" font-size="12" fill="#333333">Likely fake.</text>
+    <text x="660" y="280" font-size="12" fill="#333333">FTC Reviews</text>
+    <text x="660" y="294" font-size="12" fill="#333333">Rule violation</text>
+    <text x="660" y="308" font-size="12" fill="#333333">($51,744/violation).</text>
+
+    <!-- 15-field form -->
+    <g transform="translate(20, 320)">
+      <rect x="0" y="0" width="600" height="280" rx="6" fill="#FFFFFF" stroke="#C00000" stroke-width="2"/>
+      <rect x="0" y="0" width="600" height="30" fill="#C00000"/>
+      <text x="20" y="20" font-size="13" font-weight="700" fill="#FFFFFF">Get Started — fill out all 15 fields below</text>
+
+      <text x="20" y="55" font-size="11" fill="#333333">First name *</text>
+      <rect x="20" y="60" width="270" height="18" rx="3" fill="#F7F7F7" stroke="#BFBFBF"/>
+      <text x="310" y="55" font-size="11" fill="#333333">Last name *</text>
+      <rect x="310" y="60" width="270" height="18" rx="3" fill="#F7F7F7" stroke="#BFBFBF"/>
+
+      <text x="20" y="98" font-size="11" fill="#333333">Email *</text>
+      <rect x="20" y="103" width="270" height="18" rx="3" fill="#F7F7F7" stroke="#BFBFBF"/>
+      <text x="310" y="98" font-size="11" fill="#333333">Phone *</text>
+      <rect x="310" y="103" width="270" height="18" rx="3" fill="#F7F7F7" stroke="#BFBFBF"/>
+
+      <text x="20" y="141" font-size="11" fill="#333333">SSN (last 4) *</text>
+      <rect x="20" y="146" width="270" height="18" rx="3" fill="#FDE9E9" stroke="#C00000"/>
+      <text x="310" y="141" font-size="11" fill="#333333">DOB *</text>
+      <rect x="310" y="146" width="270" height="18" rx="3" fill="#F7F7F7" stroke="#BFBFBF"/>
+
+      <text x="20" y="184" font-size="11" fill="#333333">Bank account # *</text>
+      <rect x="20" y="189" width="270" height="18" rx="3" fill="#FDE9E9" stroke="#C00000"/>
+      <text x="310" y="184" font-size="11" fill="#333333">Routing # *</text>
+      <rect x="310" y="189" width="270" height="18" rx="3" fill="#FDE9E9" stroke="#C00000"/>
+
+      <text x="20" y="223" font-size="10" fill="#808080">[…and seven more fields]</text>
+
+      <rect x="20" y="240" width="200" height="30" rx="4" fill="#C00000"/>
+      <text x="120" y="259" text-anchor="middle" font-size="13" font-weight="700" fill="#FFFFFF">SUBMIT ALL INFO</text>
+    </g>
+    <text x="660" y="360" font-size="13" fill="#C00000" font-weight="700">⊗</text>
+    <text x="660" y="378" font-size="12" fill="#333333">15 fields incl.</text>
+    <text x="660" y="392" font-size="12" fill="#333333">SSN, bank acct,</text>
+    <text x="660" y="406" font-size="12" fill="#333333">routing — too</text>
+    <text x="660" y="420" font-size="12" fill="#333333">much sensitive</text>
+    <text x="660" y="434" font-size="12" fill="#333333">data; submission</text>
+    <text x="660" y="448" font-size="12" fill="#333333">rates collapse.</text>
+    <text x="660" y="468" font-size="12" fill="#333333">Single-page form</text>
+    <text x="660" y="482" font-size="12" fill="#333333">vs. multi-step:</text>
+    <text x="660" y="496" font-size="12" fill="#333333">lower completion.</text>
+
+    <!-- Buried disclosure -->
+    <g transform="translate(20, 620)">
+      <rect x="0" y="0" width="600" height="50" rx="4" fill="#F7F7F7" stroke="#BFBFBF"/>
+      <text x="20" y="20" font-size="8" fill="#808080">By submitting this form you consent to receive calls and texts from us and our partners about products and offers using auto-</text>
+      <text x="20" y="32" font-size="8" fill="#808080">dialing technology and prerecorded voice. Your consent is not a condition of any purchase. Standard message and data rates may</text>
+      <text x="20" y="44" font-size="8" fill="#808080">apply. Reply STOP to opt out. By clicking SUBMIT you agree to these terms.</text>
+    </g>
+    <text x="660" y="660" font-size="13" fill="#C00000" font-weight="700">⊗</text>
+    <text x="660" y="678" font-size="12" fill="#333333">Consent buried,</text>
+    <text x="660" y="692" font-size="12" fill="#333333">tiny font, no</text>
+    <text x="660" y="706" font-size="12" fill="#333333">explicit checkbox.</text>
+    <text x="660" y="720" font-size="12" fill="#333333">Not clear &amp;</text>
+    <text x="660" y="734" font-size="12" fill="#333333">conspicuous;</text>
+    <text x="660" y="748" font-size="12" fill="#333333">PEWC defective.</text>
+
+    <!-- Pop-up overlay (simulated) -->
+    <g transform="translate(20, 700)">
+      <rect x="0" y="0" width="600" height="100" rx="4" fill="#FFEB84" stroke="#C00000" stroke-width="1"/>
+      <text x="300" y="26" text-anchor="middle" font-size="14" font-weight="700" fill="#C00000">⚠ WAIT! Special offer expires in 4:59 ⚠</text>
+      <text x="300" y="48" text-anchor="middle" font-size="12" fill="#333333">Don't leave! Enter your email NOW and get a FREE consultation!</text>
+      <text x="300" y="64" text-anchor="middle" font-size="11" fill="#595959">[Email field] [BLOCKING POP-UP BUTTON]</text>
+      <text x="300" y="84" text-anchor="middle" font-size="10" fill="#808080">(Visitor cannot close without entering email.)</text>
+    </g>
+    <text x="660" y="740" font-size="13" fill="#C00000" font-weight="700">⊗</text>
+
+    <!-- No footer compliance -->
+    <g transform="translate(20, 820)">
+      <rect x="0" y="0" width="600" height="160" rx="4" fill="#F7F7F7" stroke="#BFBFBF"/>
+      <text x="20" y="24" font-size="11" fill="#808080">Copyright 2026. All rights reserved.</text>
+      <text x="20" y="44" font-size="11" fill="#808080">(No address. No privacy notice. No CCPA opt-out link.</text>
+      <text x="20" y="60" font-size="11" fill="#808080">No attorney advertising disclaimer.)</text>
+    </g>
+    <text x="660" y="860" font-size="13" fill="#C00000" font-weight="700">⊗</text>
+    <text x="660" y="878" font-size="12" fill="#333333">Missing physical</text>
+    <text x="660" y="892" font-size="12" fill="#333333">address (CAN-</text>
+    <text x="660" y="906" font-size="12" fill="#333333">SPAM); no CCPA</text>
+    <text x="660" y="920" font-size="12" fill="#333333">opt-out link; no</text>
+    <text x="660" y="934" font-size="12" fill="#333333">attorney-advertising</text>
+    <text x="660" y="948" font-size="12" fill="#333333">disclaimer.</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="800" y="1170" text-anchor="middle" font-size="11" fill="#7F7F7F" font-style="italic">© Lead Broker Blueprint by Luciano Moretti  •  v1.0 May 2026.  Illustrative annotated examples; not legal advice.  See Modules 3 and 5 for regulatory and design substantiation.</text>
+</svg>

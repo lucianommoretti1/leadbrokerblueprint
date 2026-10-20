@@ -1,0 +1,362 @@
+[
+  {
+    "id": "1.1",
+    "title": "Definitions, plainly stated",
+    "lo": "By the end of this lesson, you can distinguish between a contact, a lead, a qualified lead, a prospect, and a customer; and between the activities of lead generation, lead brokering, lead aggregation, pay-per-call, and lead resale. You can also explain, in one sentence each, why these distinctions matter for pricing and legal exposure.",
+    "summary": ""
+  },
+  {
+    "id": "1.2",
+    "title": "The four players",
+    "lo": "By the end of this lesson, you can draw a simple diagram of the four players in the lead brokering ecosystem (advertisers, networks/exchanges, brokers, traffic sources), trace how information moves from consumer to advertiser, and trace how money moves in the opposite direction. You can name at least two real platforms or companies at each layer.",
+    "summary": ""
+  },
+  {
+    "id": "1.3",
+    "title": "Business models",
+    "lo": "By the end of this lesson, you can describe the five primary business models used in lead brokering (per-lead flat fee with its exclusive and shared variants, pay-per-call, pay-per-appointment/CPA, retainer/subscription, and revenue share), name real per-lead price ranges for at least four major verticals as of 2024\u20132025, and explain why revenue share is rare and legally fraught in legal, insurance, and mortgage.",
+    "summary": ""
+  },
+  {
+    "id": "1.4",
+    "title": "Brief industry history",
+    "lo": "By the end of this lesson, you can narrate, in rough order, the major arc of the lead brokering industry from its early-2000s origins to mid-2026; describe the FCC one-to-one consent rule and its 2025 vacating in Insurance Marketing Coalition v. FCC; and articulate why regulatory volatility is intrinsic to this business.",
+    "summary": "The industry emerged from direct mail and yellow pages in the 1990s, scaled with paid search in the 2000s, and reorganized around mobile and call tracking in the 2010s. Today's shape is the product of three decades of platform consolidation, regulatory tightening, and the rise of data-driven optimization."
+  },
+  {
+    "id": "1.5",
+    "title": "Why the industry exists",
+    "lo": "By the end of this lesson, you can articulate, in CAC/LTV terms, why service businesses outsource lead acquisition rather than running it in-house. You can do a back-of-envelope unit-economics calculation for a representative buyer in a vertical of your choice. You can also list at least three scenarios in which in-house generation makes more economic sense than buying leads.",
+    "summary": "Lead brokering exists because the unit economics of customer acquisition vary dramatically by vertical and by buyer. Specialists who can produce qualified leads cheaply earn a margin; specialists who can convert them efficiently pay for them. The market exists in the gap between these two specializations."
+  },
+  {
+    "id": "2.1",
+    "title": "The niche evaluation framework",
+    "lo": "By the end of this lesson, you can apply six factors to any candidate vertical and produce a comparable score. You can also explain why each factor matters and what a high vs. low score actually means in operator terms.",
+    "summary": ""
+  },
+  {
+    "id": "2.2",
+    "title": "Legal services",
+    "lo": "Name the major legal sub-verticals, recite price ranges for each, and explain the ABA Model Rule 5.4 / 7.2 / 7.3 framework that shapes how legal lead generation must be structured.",
+    "summary": "Legal has the highest headline prices in consumer lead generation, but the headline prices live in the sub-verticals that are hardest for newcomers to enter \u2014 personal injury and mass tort. The starter subverticals are family law, bankruptcy, and immigration. The compliance frame is ABA Model Rules 5.4 (fee-sharing), 7.2 (advertising), and 7.3 (solicitation), plus state-level variations and the federal TCPA/FTC overlay. Revenue share is generally not workable; per-lead flat-fee structures are."
+  },
+  {
+    "id": "2.3",
+    "title": "Home services",
+    "lo": "Name the major home services sub-verticals, recite their price ranges, and describe the structural dynamics (storm-chasing, demand seasonality, Angi/Networx/Modernize concentration) that shape the vertical.",
+    "summary": "Home services is large, varied, and structurally shaped by three demand-side operators (Angi, Modernize, Networx). Roofing has the highest CPLs but is dominated by storm-chasing dynamics; HVAC is steadier but more concentrated on the buyer side; solar has reset since 2023 and is no longer the rocket vertical it was. Starter sub-verticals operators name are pest control, cleaning, and small-trade remodeling. v1.0 \u2022 Drafted May 2026 Page 9 of 24 Lead Broker Blueprint by Lorenzo Marietti Module 2 \u2014 The Vertical Landscape"
+  },
+  {
+    "id": "2.4",
+    "title": "Insurance",
+    "lo": "Describe the structure of insurance lead generation (auto, home, life, health, Medicare), explain why insurance is regulated more heavily than most verticals, and articulate why it's a difficult beginner vertical despite its size.",
+    "summary": "Insurance is the largest vertical and one of the hardest to enter. It's regulated at the state level, the buyers are professionalized, the traffic sources are capital-intensive, and the TCPA exposure is the v1.0 \u2022 Drafted May 2026 Page 12 of 24 Lead Broker Blueprint by Lorenzo Marietti Module 2 \u2014 The Vertical Landscape highest in the industry. Workable starter paths exist \u2014 agent-direct sales, Medicare-during-AEP, final expense \u2014 but they generally require an insurance license or a licensed partner."
+  },
+  {
+    "id": "2.5",
+    "title": "Financial services",
+    "lo": "Name the major financial services sub-verticals (mortgage, debt relief, tax resolution, credit repair, business loans), and explain why CFPB and state AG enforcement risk is the dominant variable in this vertical.",
+    "summary": "Financial services lead gen is heterogeneous. Mortgage is largest and most cyclical. Debt relief, tax resolution, and credit repair each carry significant CFPB and state AG enforcement risk. Business loans and personal loans round out the vertical with lower regulatory friction but tighter unit economics. As a starter vertical, financial services rewards operators with relevant licensing or domain expertise; it punishes operators who treat it like generic consumer lead gen."
+  },
+  {
+    "id": "2.6",
+    "title": "Healthcare and medical",
+    "lo": "Name the major healthcare lead generation sub-verticals, explain the HIPAA marketing rules at a high level, and articulate why addiction treatment lead generation is a specialized regulatory category under EKRA.",
+    "summary": "Healthcare lead generation is varied. Cash-pay practices (med spa, dental, cosmetic, weight-loss) are the more accessible side; insurance-billing clinical practices come with HIPAA marketing constraints; addiction treatment is a specialized regulatory category under EKRA where compensation structures common in other verticals are not allowed. Newcomers most often start in med spa or dental."
+  },
+  {
+    "id": "2.7",
+    "title": "B2B services",
+    "lo": "Describe how B2B lead generation differs operationally from consumer lead generation, name the main B2B sub-verticals, and explain why B2B brokering looks more like agency work than consumer brokering does.",
+    "summary": "B2B is operationally distinct from consumer lead gen: longer cycles, more complex lead specs, more committee buying, and a heavier outbound/LinkedIn channel mix. Brokering in B2B looks more like running an agency than running a consumer aggregator. Newcomers with B2B sales backgrounds find it more accessible than newcomers from consumer marketing."
+  },
+  {
+    "id": "2.8",
+    "title": "Local services and other consumer verticals",
+    "lo": "Recognize the long tail of consumer verticals that lead operators serve outside the headline categories \u2014 and the specific dynamics of real estate, education, automotive, and a few others.",
+    "summary": "Long-tail consumer verticals are accessible to operators with relevant background or local relationships but rarely large enough to support a scaled standalone business. They show up most often as the second sub-vertical of an operator who's running something larger. Real estate (especially seller leads), education, automotive, pet services, and a long list of specialty consumer niches each have working operators; the question for a newcomer is whether the volume is enough to validate before capital runs out."
+  },
+  {
+    "id": "2.9",
+    "title": "Picking your first vertical: a decision exercise",
+    "lo": "Use the framework, the vertical scorings, and your own situation to produce a defensible short list of 1\u20132 verticals for your starter focus. The output is a written answer you can stand behind, not a vibe or a guru recommendation.",
+    "summary": "Pick your vertical against the framework and against your own situation, not against a guru's recommendation. Use the spreadsheet to compare; use the worksheet to score yourself; produce a short list of 1\u20132 verticals; then run a small validation experiment before committing. The output of this module is a written answer you can defend \u2014 not a vibe."
+  },
+  {
+    "id": "3.1",
+    "title": "TCPA basics",
+    "lo": "State what the TCPA actually requires (versus how it's often misread), define Prior Express Written Consent (PEWC), and identify the four elements that make a PEWC record valid.",
+    "summary": ""
+  },
+  {
+    "id": "3.2",
+    "title": "The one-to-one consent saga (and what it means today)",
+    "lo": "Narrate the FCC one-to-one consent rule arc \u2014 December 2023 adoption, January 2025 vacatur by the 11th Circuit, September 2025 FCC abandonment \u2014 and articulate why most sophisticated buyers still demand one-to-one consent contractually.",
+    "summary": ""
+  },
+  {
+    "id": "3.3",
+    "title": "Revocation of consent (the April 2025 rule that changed everything)",
+    "lo": "Operationalize the FCC's April 11, 2025 revocation rule: the \"any reasonable means\" standard, the 10-business-day window, the one-time confirmation-text safe harbor, and the scope-of-revocation rules. Rule",
+    "summary": ""
+  },
+  {
+    "id": "3.4",
+    "title": "TCPA enforcement and damages",
+    "lo": "Explain why TCPA exposure is meaningful even for a small operator, identify how class-action math creates seven-figure exposure from individually small violations, and describe what TrustedForm and Jornaya actually do to mitigate that risk.",
+    "summary": ""
+  },
+  {
+    "id": "3.5",
+    "title": "National Do Not Call Registry",
+    "lo": "State what the DNC Registry covers, what the scrubbing obligation is, what exemptions exist, and how text messages fit into the regime. Registry",
+    "summary": ""
+  },
+  {
+    "id": "3.6",
+    "title": "FTC Endorsement Guides (revised June 2023)",
+    "lo": "Recognize what counts as an endorsement, when material-connection disclosure is required, why \"results not typical\" boilerplate no longer suffices, and how the Guides apply to AI-generated and intermediary content. Citation",
+    "summary": ""
+  },
+  {
+    "id": "3.7",
+    "title": "FTC Rule on Consumer Reviews and Testimonials",
+    "lo": "Identify the seven specific practices the rule prohibits, recall the civil-penalty exposure, and apply the rule to the content and marketing infrastructure typical of a lead generation operation. Citation",
+    "summary": ""
+  },
+  {
+    "id": "3.8",
+    "title": "Telemarketing Sales Rule (TSR)",
+    "lo": "Identify the major TSR provisions \u2014 DNC, abandoned-call limit, caller-ID requirements, recordkeeping \u2014 and recognize the TSR-specific debt-relief amendments that govern advance-fee practices in financial services lead generation. Citation",
+    "summary": ""
+  },
+  {
+    "id": "3.9",
+    "title": "CAN-SPAM",
+    "lo": "Name the five core CAN-SPAM requirements, contrast CAN-SPAM with the more restrictive TCPA, and identify what CAN-SPAM does not require (despite common misconceptions). Statute",
+    "summary": ""
+  },
+  {
+    "id": "3.10",
+    "title": "FCRA touchpoints",
+    "lo": "Recognize when lead generation crosses into FCRA territory (consumer reports for credit, employment, insurance, housing) and identify why background-check and tenant-screening lead generation is a specialized regulatory category. Statute",
+    "summary": ""
+  },
+  {
+    "id": "3.11",
+    "title": "State privacy laws",
+    "lo": "Identify the major state comprehensive privacy laws as of 2026, articulate why \"sale of personal information\" rules affect lead resale specifically, and operationalize a state-by-state baseline privacy posture for a lead-generation operation.",
+    "summary": ""
+  },
+  {
+    "id": "3.12",
+    "title": "Vertical-specific regulation",
+    "lo": "Map vertical-specific rules onto the verticals covered in Module 2: ABA Model Rules for legal, NMLS and RESPA Section 8 for mortgage, state insurance licensing, HIPAA and EKRA for healthcare, and state private-investigator licensing for investigative services.",
+    "summary": ""
+  },
+  {
+    "id": "3.13",
+    "title": "Putting it together: the compliance checklist",
+    "lo": "Work through a multi-page compliance checklist that translates Lessons 3.1\u20133.12 into a sequence of concrete operational steps and document artifacts a new operator can produce before launch.",
+    "summary": ""
+  },
+  {
+    "id": "4.1",
+    "title": "Who actually buys leads",
+    "lo": "Profile the three buyer segments by vertical: solo operators, mid-size firms and franchises, large advertisers with procurement teams. Articulate why buyer profile changes how you sell.",
+    "summary": "Three buyer segments. Solo operators are accessible and informal but small-volume. Mid-size firms are the workhorse buyer segment for most independent operators. Large advertisers require track record. Match your sales approach to the buyer's tier \u2014 a one-page MOU is right for a solo buyer and wrong for a procurement team."
+  },
+  {
+    "id": "4.2",
+    "title": "How buyers find lead vendors today",
+    "lo": "Recognize the channels buyers use to find lead vendors and prioritize the ones available to a new operator.",
+    "summary": "Buyers find vendors through referrals, conferences, trade content, communities, and (occasionally) cold outreach. For a new operator, referrals and conferences are highest-yield; communities and content are compounding; cold outreach is controllable but low-conversion. Treat your first 6-12 months as community-building, not pure prospecting."
+  },
+  {
+    "id": "4.3",
+    "title": "The lead purchase agreement",
+    "lo": "Recognize the major clauses in a typical lead purchase agreement (LPA) and identify which are negotiable, which are not, and what each one means in operator terms.",
+    "summary": "A real LPA covers price and deliverable definition, lead specifications, exclusivity, return policy, payment terms, indemnification, TCPA reps and audit rights, and termination. Treat all of these as negotiable in principle; the seller's posture on audit rights and TCPA reps tells a sophisticated buyer how mature the seller's compliance program is. The sample LPA template (delivered with this module) is annotated."
+  },
+  {
+    "id": "4.4",
+    "title": "Pricing models in practice",
+    "lo": "Match pricing models to operational realities: when each model fits the buyer's intake stage and the seller's traffic profile.",
+    "summary": "Pricing models are operationally specific. Match the model to the buyer's intake strength, the seller's inventory consistency, and the vertical's regulatory frame. Start with shared per-lead; expand carefully."
+  },
+  {
+    "id": "4.5",
+    "title": "Lead delivery methods",
+    "lo": "Recognize the major delivery formats \u2014 email, HTTP POST / API, live transfer, recorded call \u2014 and pair each with the buyer's intake operation.",
+    "summary": "Email is the floor; HTTP POST and API are the working standard; live and warm transfer are the premium tier; recorded call is a middle option. Run through a distribution platform once you have more than two or three concurrent buyers. v1.0 \u2022 Drafted May 2026 Page 11 of 17 Lead Broker Blueprint by Lorenzo Marietti Module 4 \u2014 The Buyer Side"
+  },
+  {
+    "id": "4.6",
+    "title": "Quality definitions and disputes",
+    "lo": "Articulate what \"qualified\" actually means contractually, recognize the common return reasons, and structure a dispute process that works for both sides.",
+    "summary": "\"Qualified\" is contractual. Common return reasons are well-defined; non-response is generally not a qualification failure. Time-box returns, require evidence, and track dispute rate as a buyer signal. The lead-quality dispute decision tree (Module 4 deliverable) operationalizes this."
+  },
+  {
+    "id": "4.7",
+    "title": "The honest conversation about being new",
+    "lo": "Approach a buyer with a credible opening when you have no track record. Recognize which buyers will work with newcomers and which won't.",
+    "summary": "Most buyers will say no to a new vendor; expect 80%+ rejection. The yeses come from solo operators, mid-size firms diversifying supply, growth-vertical buyers, and warm-intro relationships. Give on payment terms; don't give on TCPA reps, indemnification, or quality definitions. The opener works when it's specific, credible, and low-commitment."
+  },
+  {
+    "id": "5.1",
+    "title": "Traffic source overview",
+    "lo": "Name the major traffic sources, recognize their strengths and weaknesses, and pair each with the verticals where it does and does not work.",
+    "summary": "Seven traffic sources. Paid search converts best but costs most. Paid social is for emotional verticals and B2B (LinkedIn). SEO compounds slowly and rewards depth. Email/SMS, affiliate, outbound, and co-reg fill specific niches. Pick the source that fits both your vertical and your skill set."
+  },
+  {
+    "id": "5.2",
+    "title": "Paid search deep dive",
+    "lo": "Explain why CPLs in legal and home services are so high, recognize the difference between highintent and research-stage keywords, and articulate why negative keywords are the most-skipped lever in paid search.",
+    "summary": "Paid search converts well, costs a lot, and rewards discipline on negative keywords. High-intent terms drive most lead-gen funnels. Local Services Ads has changed competitive dynamics in service verticals; build a value proposition that goes beyond \"we get you leads.\""
+  },
+  {
+    "id": "5.3",
+    "title": "Paid social deep dive",
+    "lo": "Explain why social converts differently from search, recognize creative cycle / audience fatigue dynamics, and pair paid social with the right verticals (and avoid the wrong ones).",
+    "summary": "Paid social is interruption traffic. Emotional and impulse verticals work; high-intent service verticals don't. Creative degrades quickly; refresh continuously. LinkedIn is the only meaningful B2B paid-social channel."
+  },
+  {
+    "id": "5.4",
+    "title": "SEO and content",
+    "lo": "Articulate why SEO is the slowest but highest-margin traffic source, describe the Google algorithm changes of 2024\u20132025 (Helpful Content Update and AI Overviews) and their impact on lead-gen sites, and decide whether SEO is a sensible play for your vertical.",
+    "summary": "SEO is slow and compounding. The 2024-2025 Google reset has rewarded substantive content and punished thin content. Local SEO is more accessible than national; high-intent commercial content has held value better than research-stage content under AI Overviews."
+  },
+  {
+    "id": "5.5",
+    "title": "Landing page anatomy",
+    "lo": "Identify the components of a converting lead-gen landing page, describe what does and does not convert with annotated examples, and articulate the form-length vs lead-quality trade-off.",
+    "summary": "A converting lead-gen landing page is short, clear, compliant, and matched to the source of the traffic. Form length is the main quality lever; shorter forms produce more, lower-quality leads. Multi-step funnels outperform single-page equivalents. Stock testimonials and AI-generated content are now both prohibited and ineffective. The annotated landing page anatomy examples (Module 5 deliverable) make this concrete."
+  },
+  {
+    "id": "5.6",
+    "title": "Intake and qualification",
+    "lo": "Distinguish form-based, phone-based, and live-transfer intake; design qualification questions specific to your vertical; and design an intake script structure that produces consistent qualified leads.",
+    "summary": "Three intake modes; choose based on price tier, vertical, and operational capacity. Qualification questions are vertical-specific and shouldn't be improvised. Script structure helps human agents stay disciplined. The intake script templates (Module 5 deliverable) cover four verticals: PI, HVAC, Medicare, and mortgage."
+  },
+  {
+    "id": "5.7",
+    "title": "Unit economics",
+    "lo": "Run the CAC/LTV math from both sides of the transaction. Articulate why an \"expensive\" lead is sometimes profitable for the buyer and a \"cheap\" lead is sometimes unprofitable.",
+    "summary": "Unit economics runs both ways. The buyer cares about CAC vs LTV; the seller cares about supply CPL vs sale price. The dominant variable on the buyer's CAC is conversion rate, not lead price. The unit economics calculator spreadsheet (Module 5 deliverable) lets you walk through your own numbers from both sides."
+  },
+  {
+    "id": "6.1",
+    "title": "The minimum viable tech stack",
+    "lo": "Name the seven categories of tooling a compliant lead-gen operation needs from day one. Budget honestly across two tiers ($200/month and $5,000/month).",
+    "summary": "Seven categories. Tier 1 runs ~$200-500/month at very small scale; Tier 2 runs $1,000-5,000/month at meaningful scale. The categories that should not be skipped: consent capture and call tracking; weak setup on these creates real compliance exposure."
+  },
+  {
+    "id": "6.2",
+    "title": "Lead distribution platforms",
+    "lo": "Compare the four major lead distribution platforms (LeadConduit, Boberdoo, Phonexa, Leadspedia), recognize when you need one, and choose the right one for your stage and vertical.",
+    "summary": "LeadConduit is the dominant platform; the others have specific strengths. Don't add a platform before you need it; do add one before the manual operational burden of routing exceeds your bandwidth. Switching is normal."
+  },
+  {
+    "id": "6.3",
+    "title": "Call tracking",
+    "lo": "Articulate what call tracking actually does, recognize the state-by-state consent-to-record landscape, and choose call tracking that fits form-lead vs. pay-per-call operations.",
+    "summary": "Call tracking does three things: dynamic number insertion for attribution, recording and scoring, and IVR/routing. State-by-state consent-to-record rules matter; disclose every recorded call. CallRail for form-lead operators; Ringba / Retreaver / Phonexa for pay-per-call."
+  },
+  {
+    "id": "6.4",
+    "title": "Consent capture and verification",
+    "lo": "Articulate what TrustedForm and Jornaya actually do, when they're contractually required, and how they fit into the lead-distribution workflow.",
+    "summary": "TrustedForm and Jornaya are evidence vendors. They produce certificate URLs proving the disclosure language and consent action a consumer saw. Sophisticated buyers require them; the operational cost is small relative to the litigation-defense value. v1.0 \u2022 Drafted May 2026 Page 9 of 15 Lead Broker Blueprint by Lorenzo Marietti Module 6 \u2014 Operations and Tooling"
+  },
+  {
+    "id": "6.5",
+    "title": "Team structure as you scale",
+    "lo": "Sequence the first 5-10 hires in a lead-gen operation. Match each hire to the operational pain it solves.",
+    "summary": "The first 5 hires solve specific operational pains in sequence: intake, media buying, account management, compliance, then operational depth. Hiring out of sequence wastes money; hiring on schedule generally pays for itself within 90 days per hire."
+  },
+  {
+    "id": "6.6",
+    "title": "Common operational pitfalls",
+    "lo": "Recognize the operational mistakes that show up in the post-mortems of failed lead-gen operations. Build a watch-list of warning signs.",
+    "summary": "Six operational pitfalls: overpaying for traffic without buyers, over-promising volume, compliance shortcuts, vendor concentration, tooling under-investment, and founder time on the wrong work. Build a quarterly self-review against this list."
+  },
+  {
+    "id": "7.1",
+    "title": "Honest readiness assessment",
+    "lo": "Self-assess across six dimensions: capital, time, relevant skills, network, geographic flexibility, and licensure willingness. Produce a score you can honestly defend.",
+    "summary": "Six dimensions of readiness. Score yourself honestly; the constraints determine which verticals are open. The 90-day worksheet (Module 7 deliverable) operationalizes the assessment."
+  },
+  {
+    "id": "7.2",
+    "title": "Capital scenarios",
+    "lo": "Calibrate what's realistic at $1k, $5k, $15k, and $50k starting budgets. Identify which verticals each capital level locks you out of.",
+    "summary": "Capital determines which verticals are open. $1k is a relationship-and-outbound budget; $5k is a starter validation budget; $15k is a serious validation budget; $50k is enough to attempt most verticals at modest scale. Match the capital to the vertical, not the other way around."
+  },
+  {
+    "id": "7.3",
+    "title": "The buyer-first sequencing",
+    "lo": "Articulate why most failed lead-gen businesses generated leads before having buyers, and design a buyer-first sequencing that lands 2-3 starter contracts before meaningful traffic spend.",
+    "summary": "Buyer-first sequencing. Have 2-3 buyer commitments before you spend serious money on traffic. The buyer conversations themselves are the validation that the vertical is workable; the traffic spend is the second step, not the first. Operators who skip this step almost always pay for the lesson with their first $10-30k of capital. v1.0 \u2022 Drafted May 2026 Page 7 of 17 Lead Broker Blueprint by Lorenzo Marietti Module 7 \u2014 Starting from Zero"
+  },
+  {
+    "id": "7.4",
+    "title": "Time to first revenue under various scenarios",
+    "lo": "Set honest expectations on time-to-first-revenue by sequencing choice and vertical. No promises; ranges drawn from operator commentary.",
+    "summary": "Honest ranges, not promises. Buyer-first with existing relationships is fastest; generator-first organic is slowest; generator-first paid is medium-pace with the highest capital risk. No path produces revenue in week one for a newcomer; plan for it. v1.0 \u2022 Drafted May 2026 Page 9 of 17 Lead Broker Blueprint by Lorenzo Marietti Module 7 \u2014 Starting from Zero"
+  },
+  {
+    "id": "7.5",
+    "title": "Validation before commitment",
+    "lo": "Design a $200-2,000 validation experiment that produces a clear go/no-go signal before committing to a vertical for a full year.",
+    "summary": "Validation is a small, time-boxed experiment with a written decision rule. Three workable patterns. Spend $200-2,000, not $10-30,000, to find out whether the vertical works for you. The Module 7 validation experiment templates (deliverable) make this concrete. v1.0 \u2022 Drafted May 2026 Page 11 of 17 Lead Broker Blueprint by Lorenzo Marietti Module 7 \u2014 Starting from Zero"
+  },
+  {
+    "id": "7.6",
+    "title": "Common failure modes \u2014 and how often they actually happen",
+    "lo": "Recognize the six failure modes that account for most newcomer attrition, and the rough base rates operators report.",
+    "summary": "Six failure modes; roughly 60-70% of small operations don't survive year two. The most common patterns are buyer-churn / payment-timing, traffic-cost inflation, and founder burnout. Recognize the patterns; defend against them deliberately. v1.0 \u2022 Drafted May 2026 Page 13 of 17 Lead Broker Blueprint by Lorenzo Marietti Module 7 \u2014 Starting from Zero"
+  },
+  {
+    "id": "7.7",
+    "title": "When to walk away",
+    "lo": "Recognize the signs that the vertical is wrong, the timing is wrong, or you're not the right person for this business. Give yourself permission to quit early without sunk-cost fallacy.",
+    "summary": "Three categories of walk-away signal: the vertical is wrong, the timing is wrong, you're the wrong person for this business. Each is legitimate. Quitting early, on a written rule, is not failure \u2014 it's the system working as designed."
+  },
+  {
+    "id": "8.1",
+    "title": "Industry publications, podcasts, conferences",
+    "lo": "Identify the conferences, publications, and podcasts a serious operator follows. Triage them by signal-to-noise ratio so you can subscribe to the highest-yield ones without drowning.",
+    "summary": ""
+  },
+  {
+    "id": "8.2",
+    "title": "Communities",
+    "lo": "Find the working communities where operators discuss real problems. Pick 1-2 to participate in actively rather than lurking in twelve.",
+    "summary": ""
+  },
+  {
+    "id": "8.3",
+    "title": "Key people to follow",
+    "lo": "Build a follow-list of operators, analysts, regulators, and lawyers who publish useful content. Pick 8-15 to follow actively; ignore the rest.",
+    "summary": ""
+  },
+  {
+    "id": "8.4",
+    "title": "Books and longer-form resources",
+    "lo": "Recognize the books and longer-form resources that hold up. Distinguish from short-form operator content that goes stale fast.",
+    "summary": ""
+  },
+  {
+    "id": "8.5",
+    "title": "How to keep up with regulation",
+    "lo": "Build a quarterly regulatory-update process. Identify the primary sources to monitor.",
+    "summary": ""
+  },
+  {
+    "id": "8.6",
+    "title": "Course wrap-up and how to give honest feedback",
+    "lo": "Apply the standing disclosures to your own usage of the course. Use the refund policy and the feedback channel if either is appropriate.",
+    "summary": ""
+  }
+]

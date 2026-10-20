@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /members/
+Disallow: /functions/
+Disallow: /Module 1*/
+Disallow: /Module 2*/
+Disallow: /Module 3*/
+Disallow: /Module 4*/
+Disallow: /Module 5*/
+Disallow: /Module 6*/
+Disallow: /Module 7*/
+Disallow: /Module 8*/
+
+Sitemap: https://leadbrokerblueprint.us/sitemap.xml

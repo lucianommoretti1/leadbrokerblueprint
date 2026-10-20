@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TCPA compliance for lead generation: a 2026 operator's guide</title>
+  <meta name="description" content="A practitioner's guide to TCPA compliance for lead generators and brokers in 2026. Covers PEWC consent, the FCC one-to-one rule and its 2025 vacating, the April 2025 revocation rule, damages, and the operational stack required to stay compliant." />
+  <meta property="og:title" content="TCPA compliance for lead generation: 2026 operator's guide" />
+  <meta property="og:description" content="What lead generators and brokers must know about TCPA in 2026 — consent capture, one-to-one rule, revocation, damages, and the operational stack required." />
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:image" content="https://leadbrokerblueprint.us/assets/img/og/tcpa-compliance.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://leadbrokerblueprint.us/assets/img/og/tcpa-compliance.png" />
+<meta property="og:url" content="https://leadbrokerblueprint.us/learn/tcpa-compliance-for-lead-generation.html" />
+  <link rel="canonical" href="https://leadbrokerblueprint.us/learn/tcpa-compliance-for-lead-generation.html" />
+  <meta name="theme-color" content="#FF6B1A" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "TCPA compliance for lead generation: a 2026 operator's guide",
+    "description": "A practitioner-level explanation of TCPA compliance for lead generators and brokers — consent capture, one-to-one rule, revocation rule, damages, and the operational stack.",
+    "author": { "@type": "Person", "name": "Lorenzo Marietti" },
+    "publisher": { "@type": "Organization", "name": "Lead Broker Blueprint" },
+    "datePublished": "2026-05-21",
+    "mainEntityOfPage": "https://leadbrokerblueprint.us/learn/tcpa-compliance-for-lead-generation.html"
+  }
+  </script>
+  <style>
+    .seo-article { max-width: 760px; margin: 0 auto; padding: 60px 24px 100px; }
+    .seo-article h1 { font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; margin: 0 0 22px; font-weight: 700; }
+    .seo-article .lede { font-size: 1.2rem; line-height: 1.6; color: var(--ink-2, rgba(255,255,255,0.85)); margin: 0 0 36px; }
+    .seo-article h2 { font-family: 'Fraunces', serif; font-size: 1.7rem; margin: 48px 0 16px; line-height: 1.3; font-weight: 700; }
+    .seo-article h3 { font-size: 1.2rem; margin: 32px 0 12px; font-weight: 700; }
+    .seo-article p { font-size: 1.04rem; line-height: 1.75; margin: 0 0 18px; color: var(--ink-2, rgba(255,255,255,0.85)); }
+    .seo-article ul, .seo-article ol { margin: 0 0 24px; padding-left: 24px; }
+    .seo-article li { font-size: 1.02rem; line-height: 1.7; margin-bottom: 10px; color: var(--ink-2, rgba(255,255,255,0.85)); }
+    .seo-article .callout { background: rgba(255,255,255,0.04); border: 1px solid var(--line, rgba(255,255,255,0.08)); padding: 22px 26px; border-radius: 10px; margin: 32px 0; }
+    .seo-article .warn { background: rgba(255,193,7,0.06); border-left: 3px solid #FFC107; padding: 18px 24px; border-radius: 0 8px 8px 0; margin: 24px 0; }
+    .seo-cta { margin: 60px 0; padding: 36px; background: linear-gradient(135deg, rgba(255,107,26,0.08) 0%, rgba(255,107,26,0.02) 100%); border: 2px solid var(--accent, #FF6B1A); border-radius: 14px; text-align: center; }
+    .seo-cta h3 { font-family: 'Fraunces', serif; font-size: 1.6rem; margin: 0 0 12px; }
+    .seo-cta p { margin-bottom: 20px; }
+    .seo-toc { background: rgba(255,255,255,0.03); border-left: 3px solid var(--accent, #FF6B1A); padding: 20px 28px; border-radius: 0 8px 8px 0; margin-bottom: 40px; }
+    .seo-toc-label { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--accent, #FF6B1A); margin-bottom: 12px; }
+    .seo-toc ul { margin: 0; padding-left: 18px; }
+    .seo-toc li { margin-bottom: 6px; font-size: 0.95rem; }
+    .seo-meta { color: var(--muted, rgba(255,255,255,0.55)); font-size: 0.9rem; margin-bottom: 8px; }
+    .disclaimer { background: rgba(255,193,7,0.04); border: 1px dashed rgba(255,193,7,0.4); padding: 14px 18px; border-radius: 6px; margin: 28px 0; font-size: 0.88rem; color: var(--ink-2, rgba(255,255,255,0.75)); }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="../index.html" class="brand">
+        <span class="brand-mark">LB</span>
+        Lead Broker Blueprint
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#modules">Modules</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#pricing">Pricing</a>
+        <a href="../index.html#pricing" class="btn btn-primary btn-sm" style="margin-left: 10px;">Reserve your spot →</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <article class="seo-article">
+      <div class="seo-meta">By Lorenzo Marietti · Updated May 2026</div>
+      <h1>TCPA compliance for lead generation: a 2026 operator's guide</h1>
+      <p class="lede">
+        The Telephone Consumer Protection Act (TCPA) is the single biggest legal risk surface for lead
+        generators, brokers, and aggregators operating in the U.S. This guide explains what TCPA
+        compliance actually requires in 2026 — consent capture, the one-to-one rule and its 2025
+        vacating, the April 2025 revocation rule, damages, and the operational stack required to stay
+        on the right side of the line.
+      </p>
+
+      <div class="disclaimer">
+        <strong>Not legal advice.</strong> This article is educational and reflects the state of TCPA law as of mid-2026. It does not constitute legal advice for any specific business situation. Consult licensed counsel familiar with your operation before relying on anything below.
+      </div>
+
+      <div class="seo-toc">
+        <div class="seo-toc-label">In this article</div>
+        <ul>
+          <li><a href="#what">What the TCPA actually prohibits</a></li>
+          <li><a href="#pewc">Prior Express Written Consent (PEWC) in plain language</a></li>
+          <li><a href="#one-to-one">The "one-to-one consent" saga and the 11th Circuit's 2025 vacating</a></li>
+          <li><a href="#revocation">The April 2025 revocation rule</a></li>
+          <li><a href="#damages">Damages: what TCPA violations actually cost</a></li>
+          <li><a href="#stack">The compliance stack a serious operator runs</a></li>
+          <li><a href="#mistakes">The five most common TCPA mistakes by new operators</a></li>
+        </ul>
+      </div>
+
+      <h2 id="what">What the TCPA actually prohibits</h2>
+      <p>
+        At a high level, the TCPA prohibits the following without prior consent from the called party:
+      </p>
+      <ul>
+        <li>Calls made to cell phones using an "automatic telephone dialing system" (ATDS) or with a prerecorded/artificial voice</li>
+        <li>Text messages sent to cell phones via automated systems</li>
+        <li>Prerecorded calls to residential landlines</li>
+        <li>Telemarketing calls to numbers on the National Do Not Call Registry (with limited exceptions)</li>
+      </ul>
+      <p>
+        For lead generators and brokers, the practical impact is enormous. The vast majority of follow-up
+        to consumers who submitted forms involves cell phones, automated dialing, text messages, or some
+        combination. Without proper consent, every one of those calls or texts is a TCPA violation —
+        with statutory damages of $500 per violation (uncapped for willful violations, often trebled to
+        $1,500).
+      </p>
+
+      <h2 id="pewc">Prior Express Written Consent (PEWC) in plain language</h2>
+      <p>
+        For telemarketing calls or texts to cell phones using automated systems, the TCPA requires Prior
+        Express Written Consent (PEWC) from the consumer. "Written" includes electronic signatures and
+        checkbox-style consent flows. To be valid, PEWC must:
+      </p>
+      <ol>
+        <li><strong>Identify the seller(s).</strong> The consumer must know which company or companies will be calling.</li>
+        <li><strong>Specify that the consent is for telemarketing calls/texts.</strong> Generic privacy-policy consent doesn't count.</li>
+        <li><strong>Indicate that consent is not required for purchase.</strong> Bundling consent with a purchase obligation is a per-se violation.</li>
+        <li><strong>Disclose that automated dialing or prerecorded voice may be used.</strong></li>
+        <li><strong>Be unambiguous and conspicuous.</strong> Buried disclosures in 8pt gray text don't survive scrutiny.</li>
+      </ol>
+
+      <div class="callout">
+        <strong>Operational implication:</strong> the consent disclosure on your landing-page form is the single most important piece of legal infrastructure in your entire operation. It needs to be drafted carefully (most operators use a template reviewed by counsel), positioned prominently, and captured with a TrustedForm or Jornaya certificate that proves the consumer actually saw and acted on it.
+      </div>
+
+      <h2 id="one-to-one">The "one-to-one consent" saga and the 11th Circuit's 2025 vacating</h2>
+      <p>
+        In December 2023, the FCC adopted what became known as the "one-to-one consent" rule. The rule
+        would have required, in effect, that PEWC be obtained for each specific seller individually — no
+        more bundled consent flows naming "our marketing partners" generally or listing 30+ companies in
+        small print.
+      </p>
+      <p>
+        The rule was scheduled to take effect January 27, 2025. On January 24, 2025, the Eleventh Circuit
+        decided <em>Insurance Marketing Coalition v. FCC</em>, vacating the rule on the grounds that the
+        FCC had exceeded its statutory authority. The stricter one-to-one interpretation is therefore no
+        longer in force at the federal level.
+      </p>
+      <p>
+        <strong>What this means in 2026:</strong> the FCC's prior, looser interpretation of PEWC applies.
+        Consent disclosures may name multiple sellers (including via a linked "marketing partners" list),
+        provided the consumer can clearly identify who may contact them. That said:
+      </p>
+      <ul>
+        <li>The underlying TCPA still requires that consent be valid for the actual seller making the contact. Lists of "potential partners" that the consumer can't realistically navigate are still vulnerable to challenge.</li>
+        <li>Some states have enacted their own one-to-one-style rules (or have proposed them). Compliance with federal TCPA is not the same as compliance with state law.</li>
+        <li>Best-in-class operators have continued to use one-to-one-style consent flows voluntarily, on the view that they are more defensible in litigation and less vulnerable to future rule changes.</li>
+      </ul>
+
+      <h2 id="revocation">The April 2025 revocation rule</h2>
+      <p>
+        In a separate FCC order that took effect April 2025, the rules around how a consumer can revoke
+        TCPA consent were significantly tightened. The key provisions:
+      </p>
+      <ul>
+        <li><strong>Consumers can revoke consent through any reasonable means</strong> — replying STOP, calling, emailing, mailing a letter, telling an agent verbally, or any other "reasonable" method. Sellers cannot restrict revocation to one specific channel.</li>
+        <li><strong>Revocation must be honored across all of a seller's contact channels.</strong> A STOP reply to an SMS suppresses all further telemarketing calls, texts, and prerecorded contact — not just SMS.</li>
+        <li><strong>The seller has 10 business days to propagate the revocation</strong> across their systems and any downstream entities to whom consent flowed.</li>
+        <li><strong>Confirmation messages are permitted</strong> (e.g., a one-time "You've been unsubscribed" SMS) but not required.</li>
+      </ul>
+      <div class="warn">
+        <strong>Operator practical impact:</strong> if your operation has multiple touchpoints — SMS dialer, voice dialer, email, mailer — they all need to talk to a single suppression list, updated within 10 business days of any revocation. This is a meaningful operational investment but compliance is not optional.
+      </div>
+
+      <h2 id="damages">Damages: what TCPA violations actually cost</h2>
+      <p>
+        Statutory damages under the TCPA are $500 per violation, with willful or knowing violations
+        subject to treble damages ($1,500 per violation). Damages are uncapped and apply per-call/per-text
+        — meaning a single campaign to a non-consented list of 10,000 numbers can produce $5M-$15M of
+        statutory exposure on its face.
+      </p>
+      <p>
+        TCPA class actions are common because:
+      </p>
+      <ul>
+        <li>Plaintiff firms specialize in monitoring for TCPA violations</li>
+        <li>Many consumers receive multiple unwanted calls/texts, producing class-action volume</li>
+        <li>Damages math scales linearly with violation count, making class certification financially attractive</li>
+        <li>Settlements typically range $1.5M-$50M+ for larger violators; smaller operators have been sued personally for six-figure amounts</li>
+      </ul>
+      <p>
+        Recent enforcement and settlement examples (publicly reported):
+      </p>
+      <ul>
+        <li>$60M settlement in 2024 involving a major insurance lead-generation operation</li>
+        <li>Multiple seven-figure settlements involving Medicare lead generators in 2024-2025</li>
+        <li>Increasing pursuit of individual liability against operators where corporate-veil arguments fail</li>
+      </ul>
+
+      <h2 id="stack">The compliance stack a serious operator runs</h2>
+      <p>To stay TCPA-compliant at any meaningful operating volume, an operator needs:</p>
+      <ol>
+        <li><strong>A properly drafted consent disclosure</strong> on every landing page and form that captures PEWC. Reviewed by counsel. Updated whenever rules change.</li>
+        <li><strong>A consent-capture service</strong> (TrustedForm by ActiveProspect or Jornaya, primarily) that records the consumer's interaction with the disclosure and produces a certificate URL.</li>
+        <li><strong>DNC scrubbing</strong> against the federal DNC registry and applicable state DNC registries before every outbound call. Real-time API integration, logged scrub results.</li>
+        <li><strong>A suppression list infrastructure</strong> that propagates STOP/revocation across all channels within 10 business days.</li>
+        <li><strong>Recording of calls</strong> where applicable (most operations record), with proper notice in two-party-consent states.</li>
+        <li><strong>Documented procedures</strong> for handling consumer complaints and revocations.</li>
+        <li><strong>Retention of compliance records</strong> for 4+ years — the typical TCPA statute of limitations window plus a buffer.</li>
+      </ol>
+
+      <h2 id="mistakes">The five most common TCPA mistakes by new operators</h2>
+      <ol>
+        <li><strong>Skipping TrustedForm/Jornaya to save money.</strong> $0.05-$0.25 per certificate is cheap insurance against a six-figure dispute.</li>
+        <li><strong>Buying "leads" that are actually contact lists.</strong> Scraped or repurposed contact data without affirmative consent records is a TCPA violation waiting to happen.</li>
+        <li><strong>Treating DNC scrubbing as a one-time setup.</strong> The federal DNC registry is updated continuously. Scrubbing must happen at the moment of dial, not once a quarter.</li>
+        <li><strong>Failing to propagate STOP across channels.</strong> A consumer who texts STOP to an SMS dialer must also be suppressed from voice and email outreach.</li>
+        <li><strong>Selling leads downstream without consent that contemplates the resale.</strong> If your consent disclosure named you only, you can't sell that lead to a buyer who will then contact the consumer with their own brand identity.</li>
+      </ol>
+
+      <div class="seo-cta">
+        <h3>The Blueprint covers all of this in detail</h3>
+        <p>Module 3 of the Lead Broker Blueprint is a 13-lesson, 32-page deep dive into TCPA, the FCC one-to-one saga, revocation, FTC Reviews Rule, TSR, CAN-SPAM, FCRA, state privacy laws, and vertical-specific regulation. Every claim is dated; every primary source is cited. The Compliance Checklist deliverable gives you a ~60-item action list keyed to each regulation. Quarterly updates keep the material current.</p>
+        <a href="../index.html#pricing" class="btn btn-primary" style="margin-left: 10px;">See the Blueprint →</a>
+      </div>
+
+      <p style="color: var(--muted, rgba(255,255,255,0.55)); font-size: 0.88rem; margin-top: 48px;"><em>Sources: 47 U.S.C. § 227 (TCPA statute); 47 CFR § 64.1200 (implementing rules); FCC Order CG Docket 02-278 (one-to-one rule, December 2023); Insurance Marketing Coalition v. FCC, No. 24-10277 (11th Cir. January 24, 2025); FCC Revocation Order CG Docket 02-278 (effective April 2025); LeadsCouncil compliance guidance.</em></p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="foot-bottom">
+        <span>© <span data-year>2026</span> Lead Broker Blueprint by Lorenzo Marietti.</span>
+        <span><a href="../index.html">Home</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="../refund.html">Refund</a></span>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/main.js"></script>
+</body>
+</html>

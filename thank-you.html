@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>You're on the list — Lead Broker Blueprint</title>
+  <title>You're in — Lead Broker Blueprint</title>
   <meta name="robots" content="noindex" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
@@ -20,29 +20,127 @@
     </div>
   </nav>
 
-  <main class="content-page container text-center" style="padding-top:80px;">
-    <div style="font-size:4rem;">✓</div>
-    <h1>You're on the list.</h1>
-    <p class="lede" style="margin: 0 auto;">
-      We'll send the launch notification — with the founding-member discount — straight to your inbox. No spam, no
-      sales blasts, no daily emails. One email at launch, and then occasional quarterly-update emails if you choose
-      to stay subscribed.
-    </p>
-    <div class="center-cta">
-      <a href="index.html" class="btn btn-primary">Back to the home page</a>
-      <a href="index.html#modules" class="btn btn-ghost">Re-read what's inside</a>
+  <main class="content-page container" style="padding-top:60px; max-width: 760px;">
+    <div style="text-align: center;">
+      <div style="font-size:4rem; color: var(--accent);">✓</div>
+      <span class="eyebrow">Payment received</span>
+      <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px;">Welcome to the Blueprint.</h1>
+      <p class="lede" style="margin: 0 auto 40px;">
+        Your purchase is confirmed. Stripe sent you a receipt at the email address you used at checkout —
+        check your inbox if you'd like a copy on file. Everything below tells you exactly what happens next.
+      </p>
     </div>
 
-    <p style="margin-top:60px; color: var(--muted); font-size: 14px;">
-      Didn't get a confirmation? Check your spam folder, or email
-      <a class="inline" href="mailto:leadbrokerblueprint@gmail.com">leadbrokerblueprint@gmail.com</a> and we'll add you manually.
+    <div class="callout" style="background: linear-gradient(135deg, rgba(255,107,26,0.08) 0%, rgba(255,107,26,0.02) 100%); border-left: 4px solid var(--accent); padding: 24px 28px; border-radius: 8px; margin: 0 0 40px;">
+      <strong style="font-size: 1.1rem;">Your access email is on its way.</strong>
+      <p style="margin: 10px 0 0;">
+        Within the next 1-2 minutes, you'll receive an email from <code style="background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px; font-size: 0.95em;">login@leadbrokerblueprint.us</code>
+        with your member login link. The link works once and expires in 15 minutes — but you can always request a fresh one
+        at any time from the member login page.
+      </p>
+    </div>
+
+    <h2 style="margin-top: 50px;">Three things to do in the next 24 hours</h2>
+
+    <ol style="padding-left: 22px; margin-top: 20px;">
+      <li style="margin-bottom: 24px; line-height: 1.7;">
+        <strong>Check your inbox for the welcome email.</strong> If you don't see it within 5 minutes, check your
+        Gmail Promotions tab or Spam folder. Mark it as "Not Spam" / "Move to inbox" so future emails (quarterly
+        regulatory updates, member announcements) come through clean. If it's truly missing after 15 minutes,
+        request a fresh login link at the
+        <a class="inline" href="members/login.html">member login page</a>.
+      </li>
+      <li style="margin-bottom: 24px; line-height: 1.7;">
+        <strong>Log in and orient yourself.</strong> Click the magic link in your welcome email. It drops you on
+        your dashboard with all eight modules listed. The recommended reading order for your first week is below.
+      </li>
+      <li style="margin-bottom: 24px; line-height: 1.7;">
+        <strong>Save my direct email.</strong> If anything is unclear, broken, or you have a question —
+        <a class="inline" href="mailto:leadbrokerblueprint@gmail.com">leadbrokerblueprint@gmail.com</a> reaches me
+        directly. I read every message.
+      </li>
+    </ol>
+
+    <div style="text-align: center; margin: 40px 0;">
+      <a href="members/login.html" class="btn btn-primary" style="font-size: 1.05rem; padding: 14px 28px;">
+        Go to member login →
+      </a>
+    </div>
+
+    <h2 style="margin-top: 60px;">Your recommended first-week reading order</h2>
+    <p>The Blueprint is structured to be read in sequence, but if you want to get to the action faster, here's the order I'd recommend:</p>
+
+    <div class="modules" style="margin-top: 24px;">
+      <div class="module-card" style="cursor: default;">
+        <div class="module-num">1</div>
+        <div>
+          <h3>Start with Module 1 — What Lead Brokering Actually Is</h3>
+          <p>Vocabulary and the four-player ecosystem. 30 minutes. Sets the conceptual ground for everything else.</p>
+        </div>
+        <div class="module-meta">~30 min read</div>
+      </div>
+      <div class="module-card" style="cursor: default;">
+        <div class="module-num">2</div>
+        <div>
+          <h3>Then Module 2 — The Vertical Landscape</h3>
+          <p>Use the Niche Evaluation Worksheet (Module 2 deliverable) to land on 1-2 verticals before reading any further. This single decision drives everything downstream.</p>
+        </div>
+        <div class="module-meta">~45 min + worksheet</div>
+      </div>
+      <div class="module-card" style="cursor: default;">
+        <div class="module-num">3</div>
+        <div>
+          <h3>Then Module 3 — The Regulatory Landscape</h3>
+          <p>The most important compliance reading you'll do. Module 3 is what separates serious operators from the ones who get sued. Don't skip it.</p>
+        </div>
+        <div class="module-meta">~75 min read</div>
+      </div>
+      <div class="module-card" style="cursor: default;">
+        <div class="module-num">4</div>
+        <div>
+          <h3>Then the Module 4 Buyer Playbook</h3>
+          <p>Landing Your First Buyer Relationships (24 pp deliverable). Start the outreach work in week 2 — every day you wait compounds against you.</p>
+        </div>
+        <div class="module-meta">~60 min + outreach work</div>
+      </div>
+      <div class="module-card" style="cursor: default;">
+        <div class="module-num">5</div>
+        <div>
+          <h3>Then the Module 5 playbooks</h3>
+          <p>Cold-to-Warm Conversion + Modern &amp; Emerging Channels (62 pp combined). The two most-recommended deliverables in the Blueprint.</p>
+        </div>
+        <div class="module-meta">~2 hours read</div>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 60px;">If you need to refund</h2>
+    <p>
+      Your 30-day refund period starts today. If at any point in the next 30 days you decide the Blueprint isn't for you,
+      reply to your receipt email or write to
+      <a class="inline" href="mailto:leadbrokerblueprint@gmail.com">leadbrokerblueprint@gmail.com</a> with the word "refund."
+      No questions, no win-back call, no friction. Refunds are processed back to your original payment method within
+      5-10 business days. Full details on the <a class="inline" href="refund.html">Refund Policy page</a>.
     </p>
+
+    <h2 style="margin-top: 50px;">What you can expect from me</h2>
+    <p>
+      One welcome email today. Quarterly regulatory-update emails (every 90 days, brief, only when something material changes).
+      Announcements when new video content drops. That's it. No drip sequences designed to upsell you, no daily content blasts,
+      no &quot;limited-time offers&quot; in your inbox. The Blueprint is the product; everything I send from now on is in service of you using it.
+    </p>
+
+    <div style="text-align: center; margin: 60px 0 40px; padding-top: 40px; border-top: 1px solid var(--line);">
+      <p style="color: var(--muted); font-size: 1.05rem; font-style: italic; max-width: 540px; margin: 0 auto;">
+        "The operators making real money in this business aren't smarter — they've just done the reps. Welcome to the work."
+      </p>
+      <p style="color: var(--muted); margin-top: 12px;">— Lorenzo</p>
+    </div>
   </main>
 
   <footer class="site-footer">
     <div class="container">
       <div class="foot-bottom">
-        <span>© <span data-year>2026</span> Lead Broker Blueprint by Luciano Moretti.</span>
+        <span>© <span data-year>2026</span> Lead Broker Blueprint by Lorenzo Marietti.</span>
         <span><a href="index.html">Home</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="refund.html">Refund</a></span>
       </div>
     </div>
