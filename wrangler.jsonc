@@ -20,7 +20,11 @@
   "assets": {
     "directory": ".",
     "binding": "ASSETS",
-    "not_found_handling": "404-page"
+    "not_found_handling": "404-page",
+    // Run the worker on EVERY request so the members/course gate executes
+    // before any static asset is served. Without this, Cloudflare serves
+    // matching assets directly and the gate never runs.
+    "run_worker_first": true
   },
 
   // KV namespaces.
