@@ -36,12 +36,12 @@
     </form>
 
     <div class="callout" style="margin-top: 50px; max-width: 540px; margin-left:auto; margin-right:auto; text-align:left;">
-      <strong>Members area activates at launch.</strong>
-      <p style="margin: 8px 0 0;">The course is in pre-launch / waitlist mode right now. Member login becomes active when buyers can purchase the course. If you've already paid (e.g., as a founding member during early invitations), email <a class="inline" href="mailto:leadbrokerblueprint@gmail.com">leadbrokerblueprint@gmail.com</a> for manual access.</p>
+      <strong>Use the email from your purchase.</strong>
+      <p style="margin: 8px 0 0;">The login link goes to the email address you used at Stripe checkout. If you can't find it or used a different address, email <a class="inline" href="mailto:leadbrokerblueprint@gmail.com">leadbrokerblueprint@gmail.com</a> and we'll sort it out.</p>
     </div>
 
     <p style="margin-top: 40px; color: var(--muted); font-size:14px;">
-      Not a member yet? <a class="inline" href="../index.html#waitlist">Join the waitlist</a> for the launch announcement.
+      Not a member yet? <a class="inline" href="../index.html#pricing">See what's inside the Blueprint</a>.
     </p>
   </main>
 
@@ -65,22 +65,19 @@
       const originalLabel = button.textContent;
       button.disabled = true; button.textContent = 'Sending…';
       try {
-        // v1: backend stub — endpoint to be activated at launch
         const r = await fetch('/api/auth/request-magic-link', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email }),
         });
-        if (r.status === 503) {
-          alert('Member login activates at launch. If you\'re an early purchaser, email leadbrokerblueprint@gmail.com.');
-        } else if (r.ok) {
+        if (r.ok) {
           alert('Check your inbox — login link sent.');
           emailInput.value = '';
         } else {
           alert('Hmm — something went wrong. Email leadbrokerblueprint@gmail.com and we\'ll help.');
         }
       } catch (err) {
-        alert('Member login activates at launch. Email leadbrokerblueprint@gmail.com for help.');
+        alert('Something went wrong sending the link. Email leadbrokerblueprint@gmail.com for help.');
       } finally {
         button.disabled = false; button.textContent = originalLabel;
       }
