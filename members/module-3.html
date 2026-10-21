@@ -19,7 +19,7 @@
       </a>
       <div class="nav-links">
         <a href="dashboard.html">← Dashboard</a>
-        <a href="#" id="logout-link">Sign out</a>
+        <a href="/api/auth/logout" id="logout-link">Sign out</a>
       </div>
     </div>
   </nav>
@@ -163,14 +163,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById('logout-link').addEventListener('click', function (e) {
-      e.preventDefault();
-      document.cookie = 'lbb_member=; Path=/; Max-Age=0';
-      document.cookie = 'lbb_member_email=; Path=/; Max-Age=0';
-      window.location.href = 'login.html';
-    });
-  </script>
   <script src="../assets/main.js"></script>
 </body>
 </html>

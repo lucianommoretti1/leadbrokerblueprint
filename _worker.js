@@ -8,6 +8,7 @@ import { onRequest as waitlistHandler } from "./functions/waitlist.js";
 import { onRequest as stripeWebhookHandler } from "./functions/stripe-webhook.js";
 import { onRequest as requestMagicLinkHandler } from "./functions/request-magic-link.js";
 import { onRequest as verifyMagicLinkHandler } from "./functions/verify-magic-link.js";
+import { onRequest as logoutHandler } from "./functions/logout.js";
 
 export default {
   async fetch(request, env, ctx) {
@@ -27,6 +28,9 @@ export default {
     }
     if (path === "/api/auth/verify-magic-link") {
       return verifyMagicLinkHandler(context);
+    }
+    if (path === "/api/auth/logout") {
+      return logoutHandler(context);
     }
 
     // ---------- Members area gate ----------

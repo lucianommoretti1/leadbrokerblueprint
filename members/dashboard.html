@@ -19,7 +19,7 @@
       </a>
       <div class="nav-links">
         <a href="#" id="member-email" style="color: var(--muted);">member@email.com</a>
-        <a href="#" id="logout-link">Sign out</a>
+        <a href="/api/auth/logout" id="logout-link">Sign out</a>
       </div>
     </div>
   </nav>
@@ -134,15 +134,9 @@
   </footer>
 
   <script>
-    // v1: in production, this checks for valid session and redirects to login if absent
-    const email = (document.cookie.split('lbb_member_email=')[1] || '').split(';')[0] || 'member@email.com';
-    document.getElementById('member-email').textContent = email;
-    document.getElementById('logout-link').addEventListener('click', function (e) {
-      e.preventDefault();
-      document.cookie = 'lbb_member=; Path=/; Max-Age=0';
-      document.cookie = 'lbb_member_email=; Path=/; Max-Age=0';
-      window.location.href = 'login.html';
-    });
+    // Show the signed-in member's email in the navbar (cookie set by verify-magic-link).
+    const rawEmail = (document.cookie.split('lbb_member_email=')[1] || '').split(';')[0];
+    document.getElementById('member-email').textContent = rawEmail ? decodeURIComponent(rawEmail) : 'Member';
   </script>
   <script src="../assets/main.js"></script>
 </body>

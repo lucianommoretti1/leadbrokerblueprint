@@ -46,14 +46,20 @@ export async function onRequest(context) {
   };
   const session = await signSession(sessionPayload, env.AUTH_SECRET);
 
-  // Redirect to dashboard, setting the session cookie
-  return new Response(null, {
-    status: 302,
-    headers: {
-      Location: "/members/dashboard.html",
-      "Set-Cookie": `lbb_member=${encodeURIComponent(session)}; Path=/; Max-Age=${30 * 24 * 60 * 60}; HttpOnly; Secure; SameSite=Lax`,
-    },
-  });
+  // Redirect to dashboard, setting the session cookie plus a non-HttpOnly
+  // companion cookie so page JS can display the member's email in the navbar.
+  const maxAge = 30 * 24 * 60 * 60;
+  const headers = new Headers();
+  headers.set("Location", "/members/dashboard.html");
+  headers.append(
+    "Set-Cookie",
+    `lbb_member=${encodeURIComponent(session)}; Path=/; Max-Age=${maxAge}; HttpOnly; Secure; SameSite=Lax`
+  );
+  headers.append(
+    "Set-Cookie",
+    `lbb_member_email=${encodeURIComponent(parsed.email)}; Path=/; Max-Age=${maxAge}; Secure; SameSite=Lax`
+  );
+  return new Response(null, { status: 302, headers });
 }
 
 // Simple HMAC-signed payload.  In production consider a JWT library.

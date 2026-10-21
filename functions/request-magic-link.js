@@ -48,8 +48,6 @@ export async function onRequest(context) {
   const magicLink = `${origin}/api/auth/verify-magic-link?token=${encodeURIComponent(token)}`;
 
   // Send the magic-link email via Resend
-  let resendStatus = null;
-  let resendBody = null;
   if (env.RESEND_API_KEY) {
     const resendResp = await fetch("https://api.resend.com/emails", {
       method: "POST",
@@ -74,13 +72,13 @@ export async function onRequest(context) {
         ].join("\n"),
       }),
     });
-    resendStatus = resendResp.status;
-    try { resendBody = await resendResp.text(); } catch (e) { resendBody = String(e); }
+    if (!resendResp.ok) {
+      // Log server-side only; the client response shape stays identical.
+      console.error("Resend send failed:", resendResp.status, await resendResp.text().catch(() => ""));
+    }
   }
 
-  // TEMPORARY: include Resend status in response so we can verify first send works.
-  // Remove this debug echo before going public.
-  return new Response(JSON.stringify({ ok: true, sent: true, _debug: { resendStatus, resendBody } }), {
+  return new Response(JSON.stringify({ ok: true, sent: true }), {
     status: 200,
     headers: { "Content-Type": "application/json" },
   });
